@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        @media (max-width: 1330px) {
+            body{overflow-x: hidden;}
+              
+        /* Style for Navbar */
+         .top_border{
+            position: absolute;
+            width: 1280px;
+            height: 35px;
+            left: 0px;
+            top: -3px;
+
+background: #FFD059;
+        }
+        .navbar {
+            position: absolute;
+            width: 1280px;
+            height: 35px;
+            left: 420px;
+            top: 30px;
+        }
+.review-box {
+    position: relative;
+    top: 100px;
+    left: 100px;
+    background: #fcd7f1;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    width: 1000px;
+    height: 100px;
+    {{!-- text-align: center; --}}
+    display: flex;
+    flex-direction: column;
+    
+}
+.review-box-content h1{
+    font-family: "TS Safaa";
+    font-weight: 500;
+    font-size: 12px;
+    font-style: normal;
+    color: #999;
+    line-height: 1.2;
+}
+.review-box-content p{
+    font-family: "TS Safaa";
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-style: normal;
+    line-height: 1.2;
+    width: 85%;
+}
+.btn{
+    position: relative;
+    top: -70px;
+    left: 850px;
+    border-radius: 30px;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    background: #FFD059;
+    font-family: "TS Safaa";
+}
+
+.btn:hover{
+    transform: scale(1.2)
+}
+
+        .navbar a {
+            float: left;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 10px;
+            font-family: 'TS Safaa';
+            font-style: normal;
+        }
+
+        .navbar a:hover {
+            background-color: #FFD059;
+            color: black;
+        }
+
+        .navbar a.active {
+            background-color: #FFD059;
+            color: rgb(0, 0, 0);
+            font-style: bold;
+        }
+
+        /* Style for Announcement Cards */
+        .announcement-card {
+            position: relative;
+            top: 150px;
+            width: 1000px;
+            height: 100px;
+            margin: 10px;
+            font-family: "TS Safaa";
+            font-style: normal;
+            background-color: #fcd7f1;
+            padding: 20px;
+            border-radius: 20px;
+            
+            {{!-- box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); --}}
+        }
+        .announcments_heading{
+            position: absolute;
+            top: 80px;
+            text-align: center;
+            font-family: "Inter";
+            font-size: 10px;
+            font-weight: 200;
+            font-style: medium;
+            align-items: center;
+        }
+
+        .announcement-card h1 {
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .announcement-card p {
+            font-size: 10px;
+            color: #999;
+            margin-bottom: 0;
+        }
+        .Add_announcement_button{
+            position: absolute;
+            top: 150px;
+            width: 220px;
+            height: 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'TS Safaa';
+            transition: all 0.2s ease-in-out;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            text-align: center;
+            color: #000000;
+            background: #FFD059;
+            border: none;
+            align-items: center;
+        }
+
+        .Add_announcement_button:hover{
+            transform: scale(1.2);
+        }
+        .delete_announcements_button{
+            position: relative;
+            top: 100px;
+            left: 435px;
+            top: -10px;
+            width: 100px;
+            height: 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'TS Safaa';
+            transition: all 0.2s ease-in-out;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            text-align: center;
+            color: #000000;
+            background: #FFD059;
+            border: none;
+        }
+        .delete_announcements_button:hover{
+            transform: scale(1.2);
+        }
+
+        /* Style for Tutors Cards */
+        .tutors-row {
+             margin-top: 65px; 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tutors-card {
+             margin-top: 65px; 
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 250px;
+            height: 380px;
+            margin: 15px;
+            text-align: center;
+            font-family: 'TS Safaa';
+            border-radius: 30px;
+        }
+
+        
+
+        .rmv{
+            background-color: rgb(98, 97, 97);
+            color:#ffffff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .rmv:hover{
+            background-color: white;
+            color:rgb(98, 97, 97);
+        }
+
+
+     
+        .tutors-card img {
+            width: 100%;
+            height: 50%;
+            border-radius: 30px;
+        }
+
+        .tutors-card h4 {
+            
+            color: black;
+        }
+
+        .tutors-card p {
+     
+            text-align: justify;
+            margin: 10px;
+            color: gray;
+        }
+        
+        .logo{
+            position: absolute;
+            width: 175px;
+            height: 45px;
+            left: 7px;
+            top: 35px;
+
+            }
+         .admin{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            left: 200px;
+            top: 150px;
+
+            }
+        .hp_background{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 80px;
+            background-color: #ffd0595a;
+            opacity: 0.5;
+        }
+        .homepage h1{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            left: 600px;
+            top: 210px;
+            text-decoration: none;
+            font-size: 30px;
+            font-family: 'TS Safaa';
+            font-style: bold;
+            text-align: center;
+        
+        }
+        }
+
+   @media (min-width: 1331px) and (max-width: 3000px) {
+
+                     body {
+    font-size: 18px;
+    overflow-x: hidden;
+  
+  }
+  #home-link,
+#ads-link,
+#reviews-link,
+#resources-link,
+#announcements-link,
+#setti {
+  font-size: 20px; /* Change the value to adjust the size */
+}
+
+        /* Style for Navbar */
+           .top_border {
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    left: 0px;
+    top: -3px;
+    background: #FFD059;
+  }
+  .navbar {
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    left: 420px;
+    top: 30px;
+  }
+
+.review-box {
+    position: relative;
+    top: 100px;
+    left: 100px;
+    background: #fcd7f1;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    width: 1000px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-box-content h1 {
+    font-family: "TS Safaa";
+    font-weight: 500;
+    font-size: 16px; /* Increased font size */
+    font-style: normal;
+    color: #999;
+    line-height: 1.2;
+}
+
+.review-box-content p {
+    font-family: "TS Safaa";
+    font-weight: 500;
+    font-size: 18px; /* Increased font size */
+    margin-bottom: 10px;
+    font-style: normal;
+    line-height: 1.2;
+    width: 85%;
+}
+
+.btn{
+    position: relative;
+    top: -70px;
+    left: 850px;
+    border-radius: 30px;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    background: #FFD059;
+    font-family: "TS Safaa";
+}
+
+.btn:hover{
+    transform: scale(1.2)
+}
+
+        .navbar a {
+            float: left;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 10px;
+            font-family: 'TS Safaa';
+            font-style: normal;
+        }
+
+        .navbar a:hover {
+            background-color: #FFD059;
+            color: black;
+        }
+
+        .navbar a.active {
+            background-color: #FFD059;
+            color: rgb(0, 0, 0);
+            font-style: bold;
+        }
+
+        /* Style for Announcement Cards */
+       .announcement-card {
+  position: relative;
+  top: 150px;
+  width: 1000px;
+  height: 100px;
+  margin: 10px;
+  font-family: "TS Safaa";
+  font-style: normal;
+  background-color: #fcd7f1;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.announcments_heading {
+  position: absolute;
+  top: 80px;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 10px;
+  font-weight: 200;
+  font-style: medium;
+  align-items: center;
+}
+
+.announcement-card h1 {
+  font-size: 18px; /* increased font size */
+  font-style: normal;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.announcement-card p {
+  font-size: 12px; /* increased font size */
+  color: #999;
+  margin-bottom: 0;
+}
+
+        .Add_announcement_button{
+            position: absolute;
+            top: 150px;
+            width: 220px;
+            height: 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'TS Safaa';
+            transition: all 0.2s ease-in-out;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            text-align: center;
+            color: #000000;
+            background: #FFD059;
+            border: none;
+            align-items: center;
+        }
+
+        .Add_announcement_button:hover{
+            transform: scale(1.2);
+        }
+        .delete_announcements_button{
+            position: relative;
+            top: 100px;
+            left: 435px;
+            top: -10px;
+            width: 100px;
+            height: 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'TS Safaa';
+            transition: all 0.2s ease-in-out;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            text-align: center;
+            color: #000000;
+            background: #FFD059;
+            border: none;
+        }
+        .delete_announcements_button:hover{
+            transform: scale(1.2);
+        }
+
+        /* Style for Tutors Cards */
+        .tutors-row {
+              margin-top: 65px; 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tutors-card {
+              
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 300px;
+            margin: 10px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .tutors-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .tutors-card h4 {
+            color: #4CAF50;
+        }
+
+        .tutors-card p {
+            text-align: justify;
+            margin: 10px;
+            color: gray;
+        }
+        
+        .logo{
+            position: absolute;
+            width: 175px;
+            height: 45px;
+            left: 7px;
+            top: 35px;
+
+            }
+         .admin{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            left: 200px;
+            top: 150px;
+
+            }
+        .hp_background{
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 450px;
+            top: 80px;
+            background-color: #ffd0595a;
+            opacity: 0.5;
+        }
+        .homepage h1{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            left: 600px;
+            top: 210px;
+            text-decoration: none;
+            font-size: 30px;
+            font-family: 'Inter';
+            font-style: bold;
+            text-align: center;
+        
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top_border">
+
+        <img src="/logo.png" alt="Image description" class="logo">
+       
+    </div>
+    <div class="navbar">
+        <a href="#" id="home-link">Home</a>
+        <a href="#" id="ads-link">Ads</a>
+        <a href="#" id="reviews-link">Reviews</a>
+        <a href="#" id="resources-link">Resources</a>
+        <a href="#" id="announcements-link">Announcements</a>
+        {{!-- <a href="#" id="settings-link">Settings</a> --}}
+        <a href="/frontend/pages/settings.hbs" id="setti">Settings</a>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <h1 style="text-align: center;"></h1>
+        <div class="tutors-row" id="tutors-data"></div>
+    </div>
+
+    <div class="container">
+        <h1 style="text-align: center;"></h1>
+        <div class="tutors-row" id="announcement-data"></div>
+    </div>
+
+  <div class="reviews"></div>
+
+</body>
+
+<script>
+    const navbarLinks = document.querySelectorAll(".navbar a");
+
+    window.onload = function () {
+        displayHomePage();
+    }
+
+    navbarLinks.forEach(link => {
+        link.addEventListener("click", event => {
+            event.preventDefault();
+
+            const page = event.target.textContent;
+
+            if (page === "Home") {
+                displayHomePage();
+            } else if (page === "Ads") {
+                displayAdsPage();
+            } else if (page === "Reviews") {
+                getAllReviews();
+            } else if (page === "Resources") {
+                displayResourcesPage();
+            } else if (page === "Announcements") {
+                displayAnnouncementsPage();
+            }
+            else if (page === "Settings") {
+                displaySettingsPage();
+            }
+            else if (page == "Resources") {
+                displayResourcesPage();
+            }
+
+            // Push state to browser history
+            window.history.pushState({}, page, `/${page.toLowerCase()}`);
+        });
+    });
+
+    window.addEventListener('popstate', () => {
+        if (!window.history.state) {
+            displayHomePage();
+        }
+    });
+
+    function displayHomePage() {
+        document.getElementById("announcement-data").innerHTML = "";
+        document.querySelector('.reviews').innerHTML = "";
+        document.getElementById("announcement-data").innerHTML = "";
+        document.querySelector('.reviews').innerHTML = "";
+        document.getElementById("tutors-data").innerHTML = `
+        <div class="hp_background">
+                </div>
+            <div class="homepage">
+                <img src="/admin.png" alt="Image description" class="admin">
+                <h1 style="text-align: center;">Welcome Admin!</h1>
+                <div class="tutors-row" id="tutors-data"></div>
+            </div>
+        `;
+    }
+
+
+    ///////////////////
+    function displayAdsPage() {
+        document.getElementById("announcement-data").innerHTML = "";
+        // Delete all existing HTML in the tutors-data element
+        displayHomePage();
+        document.querySelector('.reviews').innerHTML = "";
+        document.getElementById("tutors-data").innerHTML = '';
+
+        fetch('/ads')
+            .then(response => response.json())
+            .then(data => {
+                let html = ``;
+                data.forEach((ad, index) => {
+                    html += `
+            <div class="tutors-card">
+                <img src="${ad.image}" alt="${ad.subject} - ${ad.class}">
+                <h4>${ad.time}</h4>
+                <p>${ad.subject} - ${ad.class}</p>
+                <p>${ad.price}</p>
+                <form onsubmit="try { removeAd('${ad._id}'); } catch(err) { console.error(err); } return false;">
+                    <button type="submit" class="rmv" style="font-family: 'TS Safaa'; border-radius: 15px; padding: 5px;margin-bottom:5px">Remove Ad</button>
+                </form>
+            </div>`;
+                    if (index % 3 === 2 || index === data.length - 1) {
+                        html += '</div><div class="tutors-row">';
+                    }
+                });
+                document.getElementById("tutors-data").innerHTML = html;
+            })
+            .catch(err => console.error(err));
+    }
+
+
+
+    function removeAd(adId) {
+        confirmation = confirm("Are you sure you want to delete this ad?");
+        if (!confirmation) {
+            return;
+        }
+        fetch('/deleteads', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ _id: adId })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                displayAdsPage();
+                alert("Ad deleted successfully");
+                console.log('Ad deleted successfully');
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    }
+
+    ///////
+
+
+    // create review container
+    async function getAllReviews() {
+        document.getElementById("announcement-data").innerHTML = "";
+        document.getElementById("tutors-data").innerHTML = "";
+        document.querySelector('.reviews').innerHTML = "";
+        
+        try {
+            const response = await fetch('/viewallreviews');
+            const data = await response.json();
+            const reviews = data.reviews;
+            const reviewsContainer = document.querySelector('.reviews');
+            reviews.forEach(review => {
+                const reviewBox = document.createElement('div');
+                reviewBox.classList.add('card', 'mb-3', 'review-box');
+                reviewBox.innerHTML = `
+        <div class="review-box-content">
+            <p class="card-text">Review: ${review.content}</p>
+          <h1>Tutor email: ${review.tutorEmail}</h1>
+          <h1>Student email: ${review.studentEmail}</h1>
+          <button class="btn btn-danger btn-sm remove-review" data-review-id="${review._id}">Remove Review</button>
+        </div>
+      `;
+                reviewsContainer.appendChild(reviewBox);
+            });
+
+            // Add click event listener to all remove review buttons
+            const removeReviewButtons = document.querySelectorAll('.remove-review');
+            removeReviewButtons.forEach(button => {
+                button.addEventListener('click', async () => {
+                    const reviewId = button.dataset.reviewId;
+                    const confirmation = confirm("Are you sure you want to remove this review?");
+                    if (confirmation) {
+                        try {
+                            const response = await fetch(`/deleteReviewById/${reviewId}`, {
+                                method: 'DELETE'
+                            });
+                            if (response.ok) {
+                                button.closest('.review-box').remove();
+                                alert('Review removed successfully');
+                            } else {
+                                alert('An error occurred while removing the review');
+                            }
+                        } catch (error) {
+                            console.error(error);
+                            alert('An error occurred while removing the review');
+                        }
+                    }
+                });
+            });
+
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+
+    function displayResourcesPage() {
+        // Add code to display resources page here
+        document.querySelector('.reviews').innerHTML = "";
+        document.getElementById("tutors-data").innerHTML = "";
+        fetch("/viewrec")
+            .then((response) => response.json())
+            .then((data) => {
+                let html = `
+            <button id="add-announcement-button" onclick="displayPopup1()" class="Add_announcement_button">Add Resources</button>
+            `;
+                for (let i = 0; i < data.announcements.length; i++) {
+                    html += `
+            <div class="announcments_heading">
+                <h1>Resources</h1>
+                </div>
+          <div class="announcement-card">
+            <h1>${data.announcements[i].content}</h1>
+            <p>${data.announcements[i].createdAt}</p>
+            <br>
+            <button onclick="deleteResource('${data.announcements[i]._id}')" class="delete_annoucements_button">Delete</button>
+          </div>`;
+                }
+                document.getElementById("announcement-data").innerHTML = html;
+            })
+            .catch((err) => {
+                // Display an error message if the request fails
+                console.log("failure");
+            });
+    }
+
+    function displayAnnouncementsPage() {
+        document.querySelector('.reviews').innerHTML = "";
+        document.getElementById("tutors-data").innerHTML = "";  // setting html other than announcements to null
+        fetch("/viewann")
+            .then((response) => response.json())
+            .then((data) => {
+                let html = `
+            <button id="add-announcement-button" onclick="displayPopup()" class="Add_announcement_button">Add Announcement</button>
+            `;
+                for (let i = 0; i < data.announcements.length; i++) {
+                    html += `
+            <div class="announcments_heading">
+                <h1>Announcements</h1>
+                </div>
+          <div class="announcement-card">
+            <h1>${data.announcements[i].content}</h1>
+            <p>${data.announcements[i].createdAt}</p>
+            <br>
+            <button onclick="deleteAnnouncement('${data.announcements[i]._id}')" class="delete_annoucements_button">Delete</button>
+          </div>`;
+                }
+                document.getElementById("announcement-data").innerHTML = html;
+            })
+            .catch((err) => {
+                // Display an error message if the request fails
+                console.log("failure");
+            });
+    }
+
+    function displayPopup() {
+        // disable the "Add Announcement" button
+        const addAnnouncementButton = document.getElementById("add-announcement-button");
+        addAnnouncementButton.disabled = true;
+
+        // create the pop-up dialog
+        const popup = document.createElement("div");
+        popup.classList.add("popup");
+        popup.style.position = "absolute";
+        popup.style.top = "120px";
+        popup.style.zIndex = "9999"
+
+        const popup_box = document.createElement("div");
+        popup_box.style.backgroundColor = "white";
+        popup_box.style.border = "1px solid black";
+        popup_box.style.padding = "10px";
+        popup_box.style.background = "#FFF1CD";
+        popup_box.style.borderRadius = "10px"
+
+        // create the input field
+        const input = document.createElement("input");
+        input.type = "text";
+        input.placeholder = "Enter your announcement here...";
+        input.required = true; // add required attribute
+        input.style.height = "30px";
+        input.style.width = "500px";
+        input.style.borderRadius = "5px";
+        input.style.borderStyle = "solid";
+        input.style.borderColor = "grey";
+        input.style.fontFamily = "TS Safaa";
+        input.style.fontSize = "15px";
+        input.style.fontStyle = "normal";
+        input.style.marginBottom = "10px";
+        popup.appendChild(input);
+        // add the input field to the container
+        popup_box.appendChild(input);
+
+        // create the submit button
+        const button = document.createElement("button");
+        button.textContent = "Submit";
+        button.style.position = "relative";
+        button.style.left = "170px";
+        button.style.top = "0px";
+        button.style.width = "150px";
+        button.style.height = "30px";
+        button.style.background = "#FFD059";
+        button.style.borderRadius = "100px";
+        button.style.fontFamily = "TS Safaa";
+        button.style.fontSize = "15px";
+        button.style.fontWeight = "500";
+        button.style.fontStyle = "normal";
+        button.style.textAlign = "center";
+        button.style.border = "none";
+        button.style.color = "black";
+        button.style.textDecoration = "none";
+        button.onclick = () => {
+            const content = input.value.trim();
+            if (content.length === 0) {
+                // if the announcement is empty or whitespace-only, show an error message
+                const error = document.createElement("p");
+                error.textContent = "Announcement cannot be empty.";
+                error.classList.add("error-message");
+                popup.appendChild(error);
+                popup_box.appendChild(error);
+                error.style.textAlign = "center";
+                error.style.fontFamily = "TS Safaa";
+                return;
+            }
+
+            saveAnnouncement(content);
+            popup.remove();
+            addAnnouncementButton.disabled = false; // enable the "Add Announcement" button
+        };
+        input, button.style.display = "block";
+
+        popup.appendChild(button);
+        // add the button to the container
+        popup_box.appendChild(button);
+
+        // add the container to the popup
+        popup.appendChild(popup_box);
+
+
+
+        // add the pop-up dialog to the page
+        const announcementsDiv = document.getElementById("announcement-data");
+        announcementsDiv.insertBefore(popup, announcementsDiv.firstChild);
+    }
+
+
+    function displayPopup1() {
+        // disable the "Add resource" button
+        const addAnnouncementButton = document.getElementById("add-announcement-button");
+        addAnnouncementButton.disabled = true;
+
+        // create the pop-up dialog
+        const popup = document.createElement("div");
+        popup.classList.add("popup");
+        popup.style.position = "absolute";
+        popup.style.top = "120px";
+        popup.style.zIndex = "9999"
+
+        const popup_box = document.createElement("div");
+        popup_box.style.backgroundColor = "white";
+        popup_box.style.border = "1px solid black";
+        popup_box.style.padding = "10px";
+        popup_box.style.background = "#FFF1CD";
+        popup_box.style.borderRadius = "10px"
+
+        // create the input field
+        const input = document.createElement("input");
+        input.type = "text";
+        input.placeholder = "Enter your resource link here...";
+        input.required = true; // add required attribute
+        input.style.height = "30px";
+        input.style.width = "500px";
+        input.style.borderRadius = "5px";
+        input.style.borderStyle = "solid";
+        input.style.borderColor = "grey";
+        input.style.fontFamily = "TS Safaa";
+        input.style.fontSize = "15px";
+        input.style.fontStyle = "normal";
+        input.style.marginBottom = "10px";
+        popup.appendChild(input);
+        // add the input field to the container
+        popup_box.appendChild(input);
+
+        // create the submit button
+        const button = document.createElement("button");
+        button.textContent = "Submit";
+        button.style.position = "relative";
+        button.style.left = "170px";
+        button.style.top = "0px";
+        button.style.width = "150px";
+        button.style.height = "30px";
+        button.style.background = "#FFD059";
+        button.style.borderRadius = "100px";
+        button.style.fontFamily = "TS Safaa";
+        button.style.fontSize = "15px";
+        button.style.fontWeight = "500";
+        button.style.fontStyle = "normal";
+        button.style.textAlign = "center";
+        button.style.border = "none";
+        button.style.color = "black";
+        button.style.textDecoration = "none";
+        button.onclick = () => {
+            const content = input.value.trim();
+            if (content.length === 0) {
+                // if the announcement is empty or whitespace-only, show an error message
+                const error = document.createElement("p");
+                error.textContent = "Resource link cannot be empty.";
+                error.classList.add("error-message");
+                popup.appendChild(error);
+                popup_box.appendChild(error);
+                error.style.textAlign = "center";
+                error.style.fontFamily = "TS Safaa";
+                return;
+            }
+
+            saveResource(content);
+            popup.remove();
+            addAnnouncementButton.disabled = false; // enable the "Add Announcement" button
+        };
+        input, button.style.display = "block";
+
+        popup.appendChild(button);
+        // add the button to the container
+        popup_box.appendChild(button);
+
+        // add the container to the popup
+        popup.appendChild(popup_box);
+
+
+
+        // add the pop-up dialog to the page
+        const announcementsDiv = document.getElementById("announcement-data");
+        announcementsDiv.insertBefore(popup, announcementsDiv.firstChild);
+    }
+
+    function saveAnnouncement(content) {
+        // send a POST request to the backend to save the new announcement
+        fetch("/addann", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ contentt: content })
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                // refresh the announcements list
+                alert("Announcement added successfully!");
+                displayAnnouncementsPage();
+            })
+            .catch((err) => {
+                // Display an error message if the request fails
+                console.log("failure");
+            });
+    }
+
+    function saveResource(content) {
+        // send a POST request to the backend to save the new announcement
+        fetch("/addrec", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ contentt: content })
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                // refresh the announcements list
+                alert("Resource added successfully!");
+                displayResourcesPage();
+            })
+            .catch((err) => {
+                // Display an error message if the request fails
+                console.log("failure");
+            });
+    }
+
+    function deleteAnnouncement(id) {
+        confirmation = confirm("Are you sure you want to delete this announcement?");
+        if (!confirmation) return;
+        fetch("/deleteann", {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ _id: id }),
+        })
+            .then((response) => response.text())
+            .then((data) => {
+                console.log(data);
+                alert("Announcement deleted successfully!")
+                displayAnnouncementsPage(); // refresh the list of announcements after successful deletion
+            })
+            .catch((err) => {
+                // Display an error message if the request fails
+                console.log("failure");
+            });
+    }
+
+    function deleteResource(id) {
+        confirmation = confirm("Are you sure you want to delete this resource?");
+        if (!confirmation) return;
+
+        fetch("/deleterec", {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ _id: id }),
+        })
+            .then((response) => response.text())
+            .then((data) => {
+                console.log(data);
+                alert("Resource deleted successfully!")
+                displayResourcesPage(); // refresh the list of announcements after successful deletion
+            })
+            .catch((err) => {
+                // Display an error message if the request fails
+                console.log("failure");
+            });
+    }
+
+    function displaySettingsPage() {
+        window.location.href = "/settings";
+    }
+
+     window.addEventListener('popstate', (event) => {
+            displayHomePage();
+        });
+        
+</script>

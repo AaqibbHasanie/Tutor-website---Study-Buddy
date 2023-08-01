@@ -1,0 +1,63 @@
+
+
+
+<!DOCTYPE html>
+<html>
+  {{!-- <head>
+    <title>Signup | My App</title>
+  </head> --}}
+  <link rel="stylesheet" href="css/index.css">
+
+  {{!-- <div class="container"> --}}
+  <div class="navbar">
+  <img src="/logo.png" alt="Image description" class="logo">
+  {{!-- <img src="frontend/pages/screen.png" alt="Image description" class="screen"> --}}
+  </div>
+  
+  <body>
+    {{!-- {{> header}} --}}
+    {{!-- {{> navbar}} --}}
+        <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/login" class="button1">Login</a></li>
+        <li><a href="/"class = "button2s" style="background-color: #FFD059;" >Home</a></li>
+      </ul>
+    </nav>
+ 
+
+
+     <div class="c3">
+        <h1>Create Account</h1>
+     </div>
+    <div class="container">
+      {{!-- <h1>Signup</h1> --}}
+      <form action="/signup_tutor" method="POST" enctype="multipart/form-data">
+        <div id="nameholder">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div id="emailholder" >
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div id="passwordholder">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        {{!-- <div id="photoholder">
+          <label for="photo">Profile photo:</label>
+          <input type="file" id="photo" name="photo" accept="image/*">
+        </div>
+         --}}
+        {{!-- <button type="submit" class="button3s">Signup</button> --}}
+         <button type="submit" class="button3s" 
+            style="background-color: #FFD059; color: white; border: none;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='#FFD059'; this.style.border='2px solid #FFD059';"
+            onmouseout="this.style.backgroundColor='#FFD059'; this.style.color='white'; this.style.border='none';"
+            onclick="this.style.backgroundColor='white'; this.style.color='#FFD059'; this.style.border='1px solid #FFD059';">Signup</button>
+         {{!-- <button type="submit" class="button3s" style="background-color: #FFD059;">Signup</button> --}}
+      </form>
+    </div>
+  </body>
+</html> 

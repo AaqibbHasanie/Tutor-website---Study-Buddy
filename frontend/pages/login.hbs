@@ -1,0 +1,86 @@
+
+
+
+<!-- login.hbs -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login | My App</title>
+</head>
+
+<link rel="stylesheet" href="css/index.css">
+
+  {{!-- <div class="container"> --}}
+  <div class="navbar">
+  <img src="/logo.png" alt="Image description" class="logo">
+  {{!-- <img src="frontend/pages/screen.png" alt="Image description" class="screen"> --}}
+  </div>
+
+<body>
+  {{!-- {{> header}} --}}
+    {{!-- {{> navbar}} --}}
+        <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/signup_follow" class="button1">Sign Up</a></li>
+        <li><a href="/"class = "button2s" style="background-color: #FFD059;" >Home</a></li>
+      </ul>
+    </nav>
+  <div class="container">
+    <div class="c3" style="left:40%;">
+       <h1>Login</h1>
+    </div>
+   
+    <form action="/login" method="POST">
+    <div class="form-group" id = "emailholder" style="width: 20%; font-family:'TS Safaa'; top: 45%; left:47%;">
+      <label for="exampleInputEmail1" style="left: -23%">Email address</label>
+      <input type="email" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter email" name="email" required>
+      {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
+    </div>
+    <div class="form-group" id = "passwordholder" style="width: 20%; font-family:'TS Safaa'; top: 60%; left:47%;">
+      <label for="exampleInputPassword1" style="left: -32%">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password"
+        required>
+    </div>
+    {{!-- <div class="form-group">
+      <label for="exampleConfirmPassword1">Confirm Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="confirm_password"
+        required>
+    </div> --}}
+    {{!-- scroll down options --}}
+    <div class="form-group" id="passwordholder" style="width: 20%; font-family:'TS Safaa'; top: 75%; left:47%;border-radius:5%">
+      <label for="userType" style="left: -17%;">Choose User Type</label>
+      <select class="form-control" id="userType" name="user_type" style="width:155%; font-family: 'TS Safaa'; border-radius:2%;background-colour:#edebe7">
+        <option value="student">Student</option>
+        <option value="admin">Admin</option>
+        <option value="tutor">Tutor</option>
+      </select>
+    </div>
+    
+    <button type="submit" class="button3s" onclick="saveUsername()"
+    
+    style="left:45%;background-color: #FFD059; color: white; border: none;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='#FFD059'; this.style.border='2px solid #FFD059';"
+            onmouseout="this.style.backgroundColor='#FFD059'; this.style.color='white'; this.style.border='none';"
+            onclick="this.style.backgroundColor='white'; this.style.color='#FFD059'; this.style.border='1px solid #FFD059';"
+>Login</button>
+
+   
+
+    </form>
+    </div>
+    <script>
+      function saveUsername() {
+        const username = document.getElementById('exampleInputEmail1').value;
+        localStorage.setItem('username', username);
+      }
+    </script>
+    </body>
+    
+    </html> 
+
+
+
+

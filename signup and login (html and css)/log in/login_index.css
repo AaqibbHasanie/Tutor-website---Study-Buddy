@@ -1,0 +1,159 @@
+.navbar{
+    position: absolute;
+    width: 1280px;
+    height: 35px;
+    left: 0px;
+    top: -3px;
+    
+    background: #FFD059;
+    }
+    
+    .logo{
+    position: absolute;
+    width: 175px;
+    height: 45px;
+    left: 7px;
+    top: 35px;
+    
+    }
+    
+    /* .screen{
+    position: absolute;
+    width: 500px;
+    height: 450px;
+    left: 600px;
+    top: 140px;
+    } */
+    
+    h1{
+    text-align: center;
+    position: absolute;
+    width: 469px;
+    height: 276px;
+    left: 400px;
+    top: 144px;
+    
+    font-family: 'TS Safaa';
+    font-style: medium;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 71px;
+    
+    color: #000000;
+    }
+    
+   h2{
+    text-align: center;
+    position: absolute;
+    width: 469px;
+    height: 276px;
+    left: 185px;
+    top: 195px;
+    
+    font-family: 'TS Safaa';
+    font-style: medium;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 71px;
+    
+    color: #000000;
+    }
+
+    .email_placeholder{
+    text-align: center;
+    position: absolute;
+    width: 500px;
+    height: 40px;
+    left: 400px;
+    top: 260px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #949191d4;
+    }
+
+    h3{
+        text-align: center;
+        position: absolute;
+        width: 469px;
+        height: 276px;
+        left: 200px;
+        top: 280px;
+        
+        font-family: 'TS Safaa';
+        font-style: medium;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 71px;
+        
+        color: #000000;
+    }
+      
+    .password_placeholder{
+        text-align: center;
+        position: absolute;
+        width: 500px;
+        height: 40px;
+        left: 400px;
+        top: 350px;
+        border-radius: 5px;
+        border-style: solid;
+        border-color: #949191d4;
+        } 
+
+
+    .button3{
+    align-items: center;
+    position: absolute;
+    width: 300px;
+    height: 47px;
+    left: 500px;
+    top: 450px;
+    background: #FFA7E6;
+    border-radius: 100px;
+    font-family: 'TS Safaa';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 45px;
+    border: none;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+
+    }
+    
+    .button1{
+    position: absolute;
+    right: 130px;
+    top: 45px;
+    width: 120px;
+    height: 43px;
+    border: none;
+    text-decoration: none;
+    font-family: 'TS Safaa';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    color: #000000;
+    }
+    
+    .button2{
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    width: 120px;
+    height: 43px;
+    text-decoration: none;
+    background: #FFD059;
+    border-radius: 100px;
+    font-family: 'TS Safaa';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 40px;
+    border: none;
+    text-align: center;
+    color: #000000;
+    }

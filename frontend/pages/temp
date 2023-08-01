@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        /* Style for Navbar */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        /* Style for Announcement Cards */
+        .announcement-card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 100%;
+            margin: 10px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .announcement-card h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .announcement-card p {
+            font-size: 16px;
+            color: #999;
+            margin-bottom: 0;
+        }
+
+        /* Style for Tutors Cards */
+        .tutors-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tutors-card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 300px;
+            margin: 10px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .tutors-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .tutors-card h4 {
+            color: #4CAF50;
+        }
+
+        .tutors-card p {
+            text-align: justify;
+            margin: 10px;
+            color: gray;
+        }
+             .card {
+            width: calc(33.33% - 40px);
+            margin: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card p {
+            margin: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .tutors-header {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .tutors-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tutors-card {
+            width: calc(33.33% - 40px);
+            margin: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .tutors-card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .tutors-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .tutors-card p {
+            margin: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a class="active" href="#" id="home-link">Home</a>
+        <a href="#" id="ads-link">Search a Tutor</a>
+        <a href="#" id="reviews-link">Delete Reviews</a>
+        <a href="#" id="resources-link">Resources</a>
+        <a href="#" id="announcements-link">Announcements</a>
+        {{!-- <a href="#" id="settings-link">Settings</a> --}}
+        <a href="/frontend/pages/settings.hbs">Settings</a>
+    </div>
+
+    <!-- Content -->
+        <div class="search-container" style="text-align: center;margin: top 5px;">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-button">Search</button>
+        </div>
+        
+        <div class="container">
+            <h1 class="tutors-header"></h1>
+            <div class="tutors-container" id="tutors-data">
+                <!-- tutors data will be displayed here -->
+            </div>
+
+    <div class="container">
+        <h1 style="text-align: center;"></h1>
+        <div class="tutors-row" id="tutors-data"></div>
+    </div>
+
+    <div class="container">
+        <h1 style="text-align: center;"></h1>
+        <div class="tutors-row" id="announcement-data"></div>
+    </div>
+
+    {{!-- <div id="content"></div> --}}
+
+</body>
+
+<script>
+    const navbarLinks = document.querySelectorAll(".navbar a");
+
+    window.onload = function () {
+        displayHomePage();
+    }
+
+    navbarLinks.forEach(link => {
+        link.addEventListener("click", event => {
+            event.preventDefault();
+
+            const page = event.target.textContent;
+
+            if (page === "Home") {
+                displayHomePage();
+            } else if (page === "Search a Tutor") {
+                displayAds();
+            }
+           
+             else if (page === "Resources") {
+                displayResourcesPage();
+            } else if (page === "Announcements") {
+                displayAnnouncementsPage();
+            }
+            else if (page === "Settings") {
+                displaySettingsPage();
+            }
+            else if (page=="Delete Reviews")
+            {
+                displayDeleteReview();
+            }
+
+            // Push state to browser history
+            window.history.pushState({}, page, `/${page.toLowerCase()}`);
+        });
+    });
+
+    window.addEventListener('popstate', () => {
+        if (window.history.state) {
+            displayHomePage();
+        }
+        else {
+            displayHomePage();
+        }
+    });
+
+ 
+    
+    async function displayHomePage() {
+        // To hide the div with class "search-container"
+         document.querySelector('.search-container').style.display = 'none';
+
+        document.getElementById("announcement-data").innerHTML = "";
+
+        try {
+            const email = window.localStorage.getItem("username");
+            const response = await fetch(`/usernameStudent/${email}`);
+            const data = await response.json();
+            const { name } = data;
+            document.getElementById("tutors-data").innerHTML = `
+      <div class="container">
+        <h1 style="text-align: center;">Welcome ${name}</h1>
+        <p>ha bhai yeh bchal raha hy home</p>
+        <div class="tutors-row" id="tutors-data"></div>
+      </div>
+    `;
+        } catch (error) {
+            console.error(error);
+            // Display error message
+            document.getElementById("tutors-data").innerHTML = `
+      <div class="container">
+        <h1 style="text-align: center;">Error</h1>
+        <p>Failed to retrieve username.</p>
+        <div class="tutors-row" id="tutors-data"></div>
+      </div>
+    `;
+        }
+    }
+
+    ///////////////////
+   const displayAds = () => {
+    
+    displayHomePage();
+     document.querySelector('.search-container').style.display = 'block';
+        fetch('/ads')
+            .then(response => response.json())
+            .then(data => {
+                let html = "";
+                data.forEach((ad, index) => {
+                    html += `
+            <div class="tutors-card">
+              <img src="${ad.image}" alt="${ad.subject} - ${ad.class}">
+              <h4 style="text-align: center;">${ad.time}</h4>
+              <p>${ad.subject} - ${ad.class}</p>
+              <p>${ad.price}</p>
+              <button onclick="showAppointmentPopup()">Book an appointment</button>
+              <button>View Reviews</button>
+              <button>Add Reviews</button>
+            </div>
+          `;
+                    if (index % 3 === 2 || index === data.length - 1) {
+                        html += '</div>';
+                    }
+                });
+                document.getElementById("tutors-data").innerHTML = html;
+            })
+            .catch(err => console.error(err));
+    };
+
+    // Create close button
+   
+   const showAppointmentPopup = () => {
+      const closeBtn = document.createElement('button');
+       closeBtn.textContent = 'X';
+       closeBtn.style.position = 'absolute';
+       closeBtn.style.width='10%';
+       closeBtn.style.top = '-100px';
+       closeBtn.style.right = '-100px';
+       closeBtn.style.bottom = '100px';
+       closeBtn.style.left = '100px';
+       closeBtn.style.margin = 'auto';
+       closeBtn.style.fontSize = '20px';
+       closeBtn.style.border = 'none';
+       closeBtn.style.backgroundColor = 'transparent';
+       closeBtn.style.cursor = 'pointer';
+       closeBtn.addEventListener('click', () => {
+           popup.remove();
+       })
+        const popup = document.createElement('div');
+      
+        popup.style.position = 'fixed';
+        popup.style.top = '0';
+        popup.style.left = '0';
+        popup.style.width = '100%';
+        popup.style.height = '100%';
+        popup.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        popup.style.display = 'flex';
+        popup.style.justifyContent = 'center';
+        popup.style.alignItems = 'center';
+
+        // Create popup content
+        const popupContent = document.createElement('div');
+        popupContent.style.backgroundColor = 'white';
+        popupContent.style.padding = '20px';
+        popupContent.style.borderRadius = '10px';
+
+        // Create form
+        const form = document.createElement('form');
+        form.style.display = 'flex';
+        form.style.flexDirection = 'column';
+
+        // Create form elements
+        const coursesLabel = document.createElement('label');
+        coursesLabel.textContent = 'Enter courses:';
+        const coursesInput = document.createElement('input');
+        coursesInput.type = 'text';
+
+        const daysLabel = document.createElement('label');
+        daysLabel.textContent = 'Enter days per week:';
+        const daysInput = document.createElement('input');
+        daysInput.type = 'number';
+        daysInput.min = 1;
+
+        const hoursLabel = document.createElement('label');
+        hoursLabel.textContent = 'Enter hours per day:';
+        const hoursInput = document.createElement('input');
+        hoursInput.type = 'number';
+        hoursInput.min = 1;
+
+        const bidLabel = document.createElement('label');
+        bidLabel.textContent = 'Offered bid:';
+        const bidInput = document.createElement('input');
+        bidInput.type = 'number';
+        bidInput.min = 1;
+
+        const submitBtn = document.createElement('button');
+        submitBtn.textContent = 'Submit';
+        submitBtn.style.marginTop = '10px';
+        submitBtn.style.backgroundColor = 'blue';
+        submitBtn.style.color = 'white';
+        submitBtn.style.border = 'none';
+        submitBtn.style.padding = '10px';
+        submitBtn.style.borderRadius = '5px';
+        submitBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Get the form data
+            const formData = {
+                courses: coursesInput.value,
+                days: daysInput.value,
+                hours: hoursInput.value,
+                bid: bidInput.value,
+            };
+            console.log(formData);
+            popup.remove();
+        });
+
+        // Add form elements to the form
+        form.appendChild(coursesLabel);
+        form.appendChild(coursesInput);
+        form.appendChild(daysLabel);
+        form.appendChild(daysInput);
+        form.appendChild(hoursLabel);
+        form.appendChild(hoursInput);
+        form.appendChild(bidLabel);
+        form.appendChild(bidInput);
+        form.appendChild(submitBtn);
+        popupContent.appendChild(form);
+        popup.appendChild(closeBtn);
+        popup.appendChild(popupContent);
+
+      document.body.appendChild(popup);
+      coursesInput.focus();
+
+  }
+
+
+    // Add event listener to search button
+    document.getElementById("search-button").addEventListener("click", () => {
+        // To show the div with class "search-container"
+       
+
+        const searchQuery = document.getElementById("search-input").value.toLowerCase();
+        fetch(`/search?q=${searchQuery}`)
+            .then(response => response.json())
+            .then(data => {
+                let html = "";
+                data.forEach((ad, index) => {
+                    html += `
+            <div class="tutors-card">
+              <img src="${ad.image}" alt="${ad.subject} - ${ad.class}">
+              <h4 style="text-align: center;">${ad.time}</h4>
+              <p>${ad.subject} - ${ad.class}</p>
+              <p>${ad.price}</p>
+            </div>
+          `;
+                    if (index % 3 === 2 || index === data.length - 1) {
+                        html += '</div>';
+                    }
+                });
+                document.getElementById("tutors-data").innerHTML = html;
+                // Add the current search query to the browser history
+                history.pushState({ searchQuery }, null, `/search?q=${searchQuery}`);
+            })
+            .catch(err => console.error(err));
+    });
+
+    // Add event listener to popstate event (back/forward buttons)
+
+
+
+    
+    function displayAddReviewsPage() {
+        // Add code to display reviews page here
+    }
+
+    function displayResourcesPage() {
+        // Add code to display resources page here
+    }
+
+    function displayDeleteReview() {
+        
+    }
+    
+    function displayAnnouncementsPage() {
+        document.querySelector('.search-container').style.display = 'none';
+        document.getElementById("tutors-data").innerHTML = "";  // setting html other than announcements to null
+        fetch("/viewann")
+            .then((response) => response.json())
+            .then((data) => {
+                let html = `
+         
+            `;
+                for (let i = 0; i < data.announcements.length; i++) {
+                    html += `
+          <div class="announcement-card">
+            <h1>${data.announcements[i].content}</h1>
+            <p>${data.announcements[i].createdAt}</p>
+            <br>
+          
+          </div>`;
+                }
+                document.getElementById("announcement-data").innerHTML = html;
+            })
+            .catch((err) => {
+                // Display an error message if the request fails
+                console.log("failure");
+            });
+    }
+
+    function displaySettingsPage() {
+        window.location.href = "/settings";
+    }
+// Define a global variable to store the name of the last executed function
+let lastFunctionName = 'displayHomePage';
+
+// Update the pushState function to store the name of the current function in the history state object
+window.history.pushState({ functionName: lastFunctionName }, page, `/${page.toLowerCase()}`);
+
+// Add code to the popstate event listener to execute the last executed function again
+window.addEventListener('popstate', (event) => {
+ displayHomePage();
+}
+);
+
+</script>

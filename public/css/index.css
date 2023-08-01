@@ -1,0 +1,867 @@
+/* /* .navbar{
+position: absolute;
+width: 1280px;
+height: 35px;
+left: 0px;
+top: -3px;
+
+background: #FFD059;
+}
+
+.logo{
+position: absolute;
+width: 175px;
+height: 45px;
+left: 7px;
+top: 35px;
+
+}
+
+.screen{
+position: absolute;
+width: 500px;
+height: 450px;
+left: 600px;
+top: 140px;
+}
+
+h1{
+position: absolute;
+width: 469px;
+height: 276px;
+left: 60px;
+top: 150px;
+
+font-family: 'TS Safaa';
+font-style: normal;
+font-weight: 500;
+font-size: 40.0885px;
+line-height: 71px;
+
+color: #000000;
+}
+
+p1{
+position: absolute;
+width: 469px;
+height: 276px;
+left: 60px;
+top: 310px;
+
+font-family: 'TS Safaa';
+font-style: normal;
+font-weight: 500;
+font-size: 40.0885px;
+line-height: 71px;
+color: #FF90E8;
+}
+
+.button3{
+position: absolute;
+width: 154px;
+height: 47px;
+left: 60px;
+top: 400px;
+background: #FFA7E6;
+border-radius: 100px;
+font-family: 'TS Safaa';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 45px;
+border: none;
+text-align: center;
+color: #FFFFFF;
+text-decoration: none;
+}
+
+.button1{
+position: absolute;
+right: 130px;
+top: 45px;
+width: 120px;
+height: 43px;
+border: none;
+text-decoration: none;
+font-family: 'TS Safaa';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 32px;
+text-align: center;
+color: #000000;
+}
+
+.button2{
+position: absolute;
+right: 10px;
+top: 40px;
+width: 120px;
+height: 43px;
+text-decoration: none;
+background: #FFD059;
+border-radius: 100px;
+font-family: 'TS Safaa';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 40px;
+border: none;
+text-align: center;
+color: #000000;
+} */
+/*
+.navbar{
+    position: absolute;
+    width: 1280px;
+    height: 35px;
+    left: 0px;
+    top: -3px;
+    
+    background: #FFD059;
+    }
+    
+    .logo{
+    position: absolute;
+    width: 175px;
+    height: 45px;
+    left: 7px;
+    top: 35px;
+    
+    }
+    
+    .screen{
+    position: absolute;
+    width: 500px;
+    height: 450px;
+    left: 600px;
+    top: 140px;
+    }
+    
+    h1{
+    position: absolute;
+    width: 469px;
+    height: 276px;
+    left: 60px;
+    top: 150px;
+    
+    font-family: 'TS Safaa';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40.0885px;
+    line-height: 71px;
+    
+    color: #000000;
+    }
+    
+    p1{
+    position: absolute;
+    width: 469px;
+    height: 276px;
+    left: 60px;
+    top: 310px;
+    
+    font-family: 'TS Safaa';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40.0885px;
+    line-height: 71px;
+    color: #FF90E8;
+    }
+    
+    .button3{
+    position: absolute;
+    width: 154px;
+    height: 47px;
+    left: 60px;
+    top: 400px;
+    background: #FFA7E6;
+    transition: all 0.2s ease-in-out;
+    border-radius: 100px;
+    font-family: 'TS Safaa';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 45px;
+    border: none;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    }
+    
+    .button3:hover {
+        
+        transform: scale(1.2);
+      }
+    
+    .button1{
+    position: absolute;
+    right: 130px;
+    top: 45px;
+    width: 120px;
+    height: 43px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    font-family: 'TS Safaa';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    color: #000000;
+    }
+    
+    .button1:hover {
+     
+        transform: scale(1.2);
+      }
+    
+    .button2{
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    width: 120px;
+    height: 43px;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    background: #FFD059;
+    border-radius: 100px;
+    font-family: 'TS Safaa';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 40px;
+    border: none;
+    text-align: center;
+    color: #000000;
+    }
+    
+    .button2:hover {
+        
+        transform: scale(1.2);
+      }
+    
+    .button4{   
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        left: 200px;
+        top: 200px;
+        transition: all 0.2s ease-in-out;
+        }
+    
+    .button4:hover{
+        transform: scale(1.1);
+        }
+    
+    .button5{
+        position: absolute;
+    width: 300px;
+    height: 200px;
+    left: 800px;
+    top: 200px;
+    transition: all 0.2s ease-in-out;
+    
+    }
+    
+    .button5:hover{
+        transform: scale(1.1);
+    }
+    
+    
+    .c2 {
+        /* text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center; 
+        position: absolute;
+        width: 40px;
+        height: 20px;
+        left: 470px;
+        top: -80px;
+    }
+    
+    
+    .stu{
+        position: absolute;
+        width: 140px;
+        height: 40px;
+        left: 280px;
+        top: 470px;
+        transition: all 0.2s ease-in-out;
+        /* position: absolute;
+    right: 10px;
+    top: 40px;
+    width: 120px;
+    height: 43px; 
+        text-decoration: none;
+    background: #FFD059;
+    border-radius: 100px;
+    font-family: 'TS Safaa';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 40px;
+    border: none;
+    text-align: center;
+    color: #000000;
+    }
+    
+    .stu:hover {
+        /* increase the size on hover 
+        transform: scale(1.2);
+      }
+    
+    .tu{
+        position: absolute;
+        width: 100px;
+        height: 40px;
+        left: 910px;
+        top: 470px;
+        /* display: flex; 
+        transition: all 0.2s ease-in-out;
+        text-decoration: none;
+        background: #FFD059;
+        border-radius: 100px;
+        font-family: 'TS Safaa';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 40px;
+        border: none;
+        text-align: center;
+        color: #000000;
+    }
+    
+    .tu:hover {
+        /* increase the size on hover 
+        transform: scale(1.2);
+      } 
+
+      */ 
+/* new starts here */
+
+
+      .navbar2{
+        position: absolute;
+        width: 1280px;
+        height: 35px;
+        left: 0px;
+        top: -3px;
+        
+        background: #FFA7E6;
+        }
+        /*
+        .logo{
+        position: absolute;
+        width: 175px;
+        height: 45px;
+        left: 7px;
+        top: 35px;
+        
+        }
+        
+        .screen{
+        position: absolute;
+        width: 500px;
+        height: 450px;
+        left: 600px;
+        top: 140px;
+        }
+        
+        h1{
+        position: absolute;
+        width: 469px;
+        height: 276px;
+        left: 60px;
+        top: 150px;
+        
+        font-family: 'TS Safaa';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40.0885px;
+        line-height: 71px;
+        
+        color: #000000;
+        }
+        
+        p1{
+        position: absolute;
+        width: 469px;
+        height: 276px;
+        left: 60px;
+        top: 310px;
+        
+        font-family: 'TS Safaa';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40.0885px;
+        line-height: 71px;
+        color: #FF90E8;
+        }
+        
+        .button3{
+        position: absolute;
+        width: 154px;
+        height: 47px;
+        left: 60px;
+        top: 400px;
+        background: #FFA7E6;
+        border-radius: 100px;
+        font-family: 'TS Safaa';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 45px;
+        border: none;
+        text-align: center;
+        color: #FFFFFF;
+        text-decoration: none;
+        }
+        
+        .button1{
+        position: absolute;
+        right: 130px;
+        top: 45px;
+        width: 120px;
+        height: 43px;
+        border: none;
+        text-decoration: none;
+        font-family: 'TS Safaa';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 32px;
+        text-align: center;
+        color: #000000;
+        }
+        */
+        .button2s{
+        position: absolute;
+        right: 10px;
+        top: 40px;
+        width: 100px;
+        height: 39px;
+        text-decoration: none;
+        background: #FFA7E6;
+        transition: all 0.2s ease-in-out;
+        border-radius: 100px;
+        font-family: 'TS Safaa';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 40px;
+        border: none;
+        text-align: center;
+        color: #000000;
+        } 
+        
+        .button2s:hover{
+          transform: scale(1.1);
+        }
+        
+        .navbar{
+            position: absolute;
+            width: 1280px;
+            height: 35px;
+            left: 0px;
+            top: -3px;
+            
+            background: #FFD059;
+        }
+            
+        .logo{
+            position: absolute;
+            width: 175px;
+            height: 45px;
+            left: 7px;
+            top: 35px;
+            
+            }
+            
+        .screen{
+            position: absolute;
+            width: 500px;
+            height: 450px;
+            left: 600px;
+            top: 140px;
+            }
+            
+            h1{
+            position: absolute;
+            width: 469px;
+            height: 276px;
+            left: 60px;
+            top: 150px;
+            
+            font-family: 'TS Safaa';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 40.0885px;
+            line-height: 71px;
+            
+            color: #000000;
+            }
+            
+            p1{
+            position: absolute;
+            width: 469px;
+            height: 276px;
+            left: 60px;
+            top: 310px;
+            
+            font-family: 'TS Safaa';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 40.0885px;
+            line-height: 71px;
+            color: #FF90E8;
+            }
+            
+            .button3{
+            position: absolute;
+            width: 154px;
+            height: 47px;
+            left: 60px;
+            top: 400px;
+            background: #FFA7E6;
+            transition: all 0.2s ease-in-out;
+            border-radius: 100px;
+            font-family: 'TS Safaa';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 45px;
+            border: none;
+            text-align: center;
+            color: #FFFFFF;
+            text-decoration: none;
+            }
+            
+            .button3:hover {
+                /* increase the size on hover */
+                transform: scale(1.2);
+              }
+            
+            .button1{
+            position: absolute;
+            right: 10%;
+            top: 45px;
+            width: 120px;
+            height: 43px;
+            border: none;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            font-family: 'TS Safaa';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 130%;
+            line-height: 32px;
+            text-align: center;
+            color: #000000;
+            }
+            
+            .button1:hover {
+                /* increase the size on hover */
+                transform: scale(1.2);
+              }
+            
+            .button2{
+            position: absolute;
+            right: 1%;
+            top: 40px;
+            width: 120px;
+            height: 43px;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            background: #FFD059;
+            border-radius: 100px;
+            font-family: 'TS Safaa';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 40px;
+            border: none;
+            text-align: center;
+            color: #000000;
+            }
+            
+            .button2:hover {
+                /* increase the size on hover */
+                transform: scale(1.2);
+              }
+            
+            .button4{   /* student*/
+                position: absolute;
+                width: 300px;
+                height: 200px;
+                left: 200px;
+                top: 200px;
+                transition: all 0.2s ease-in-out;
+                }
+            
+            .button4:hover{
+                transform: scale(1.1);
+                }
+            
+            .button5{
+                position: absolute;
+            width: 300px;
+            height: 200px;
+            left: 800px;
+            top: 200px;
+            transition: all 0.2s ease-in-out;
+            
+            }
+            
+            .button5:hover{
+                transform: scale(1.1);
+            }
+            
+            
+            .c2 {
+                /* text-align: center;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center; */
+                position: absolute;
+                width: 40px;
+                height: 20px;
+                left: 470px;
+                top: -80px;
+            }
+        
+            .c3{
+                position: absolute;
+                width: 40px;
+                height: 20px;
+                left: 470px;
+                top: -100px;
+                font-size: 20px; 
+                color: #000;
+        
+            }
+            
+            
+            .stu{
+                position: absolute;
+                width: 140px;
+                height: 40px;
+                left: 280px;
+                top: 470px;
+                transition: all 0.2s ease-in-out;
+                /* position: absolute;
+            right: 10px;
+            top: 40px;
+            width: 120px;
+            height: 43px; */
+                text-decoration: none;
+            background: #FFD059;
+            border-radius: 100px;
+            font-family: 'TS Safaa';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 25px;
+            line-height: 40px;
+            border: none;
+            text-align: center;
+            color: #000000;
+            }
+            
+            .stu:hover {
+                /* increase the size on hover */
+                transform: scale(1.2);
+              }
+            
+            .tu{
+                position: absolute;
+                width: 100px;
+                height: 40px;
+                left: 910px;
+                top: 470px;
+                /* display: flex; */
+                transition: all 0.2s ease-in-out;
+                text-decoration: none;
+                background: #FFD059;
+                border-radius: 100px;
+                font-family: 'TS Safaa';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 25px;
+                line-height: 40px;
+                border: none;
+                text-align: center;
+                color: #000000;
+            }
+            
+            .tu:hover {
+                /* increase the size on hover */
+                transform: scale(1.2);
+              }
+        
+        
+        
+        
+        
+        #nameholder {
+                position: absolute;
+                top: 37%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+              }
+              
+              #nameholder label {
+                font-family: 'TS Safaa';
+                font-size: 1.1rem; /* Use rem unit */
+                font-weight: normal;
+                display: block;
+                margin-bottom: 0.1em; /* Reduce distance between label and input */
+                position: relative;
+                top: 50%;
+                left: -35%
+              }
+              
+              #nameholder input[type="text"] {
+                font-family: Verdana, sans-serif;
+                font-size: 0.875rem; /* Use rem unit */
+                padding: 0.35em; /* Use em unit */
+                margin-top: 0.1em; /* Use em unit */
+                width: 150%; /* Use % unit */
+                border-radius: 5px ;
+                background: #edebe7;
+              }
+        
+              #emailholder {
+                position: absolute;
+                top: 55%; /* Adjust the top value to position the email field below the name field */
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                margin-top: -2em;
+              }
+              
+              #emailholder label {
+                font-family: 'TS Safaa';
+                font-size: 1.1rem;
+                font-weight: normal;
+                display: block;
+                margin-bottom: 0.1em;
+                position: relative;
+                top: 50%;
+                left: -35%;
+              }
+              
+              #emailholder input[type="email"] {
+                font-family: Verdana, sans-serif;
+                font-size: 0.875rem;
+                padding: 0.35em;
+                margin-top: 0.1em;
+                width: 150%;
+                border-radius: 5px;
+                background: #edebe7;
+              }
+        
+        #passwordholder {
+                position: absolute;
+                top: 67%; /* Adjust the top value to position the password field below the email field */
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                margin-top: -2em;
+              }
+              
+              #passwordholder label {
+                font-family: 'TS Safaa';
+                font-size: 1.1rem;
+                font-weight: normal;
+                display: block;
+                margin-bottom: 0.1em;
+                position: relative;
+                top: 60%;
+                left: -28%;
+              }
+              
+              #passwordholder input[type="password"] {
+                font-family: Verdana, sans-serif;
+                font-size: 0.875rem;
+                padding: 0.35em;
+                margin-top: 0.1em;
+                width: 150%;
+                border-radius: 5px;
+                background: #edebe7;
+              }
+              
+        
+        
+        #photoholder {
+                position: absolute;
+                top: 80%; /* Adjust the top value to position the photo field below the password field */
+                left: 56%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                margin-top: -2em;
+              }
+              
+              #photoholder label {
+                font-family: 'TS Safaa';
+                font-size: 1.1rem;
+                font-weight: normal;
+                display: block;
+                margin-bottom: 0.1em;
+                position: relative;
+                top: 50%;
+                left: -32%;
+              }
+              
+              #photoholder input[type="file"] {
+                font-family: 'TS Safaa';
+                font-size: 0.875rem;
+                padding: 0.35em;
+                margin-top: 0.1em;
+                width: 150%;
+                border-radius: 5px;
+                /* left: 80%; */
+                
+                /* background: #edebe7; */
+              }
+              
+        
+        .button3s{
+                position: absolute;
+                width: 130px;
+                height: 47px;
+                left: 48%;
+                top: 85%;
+                background: #FFA7E6;
+                border-radius: 100px;
+                font-family: 'TS Safaa';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 45px;
+                border: none;
+                text-align: center;
+                color: #FFFFFF;
+                text-decoration: none;
+         }
+        
+        
+         .button3s:hover {
+          background: #FFFFFF; /* Update to the desired background color on hover */
+          color: #FFA7E6; /* Update to the desired text color on hover */
+          border: 2px solid #FFA7E6;
+        }
+        
+        .button3s:active {
+          background: #FFA7E6; /* Update to the desired background color on button press */
+          color: #FFFFFF; /* Update to the desired text color on button press */
+        }
+        
+        /* same as above code but with yellow for tutor sign up page */
+
+
+     

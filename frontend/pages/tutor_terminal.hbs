@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+         @media (max-width: 1330px) {
+        body{
+            overflow-x: hidden;
+        }
+        /* Style for Navbar */
+          .top_border{
+            position: absolute;
+            width: 1280px;
+            height: 35px;
+            left: 0px;
+            top: -3px;
+            background: #FFD059;
+        }
+        .navbar {
+            position: absolute;
+            margin-left: -70px;
+            width: 1280px;
+            height: 35px;
+            left: 350px;
+            top: 30px;
+        }
+
+        .navbar a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 10px;
+            font-family: 'TS Safaa';
+            font-style: normal;
+        }
+
+        .navbar a:hover {
+            background-color: #FFD059;
+            color: black;
+        }
+
+        .navbar a.active {
+            background-color: #FFD059;
+            color: rgb(0, 0, 0);
+            font-style: bold;
+        }
+
+        /* Style for Announcement Cards */
+        .announcement-card {
+            position: relative;
+            top: 50px;
+            width: 1000px;
+            height: 100px;
+            margin: 10px;
+            font-family: "TS Safaa";
+            font-style: normal;
+            background-color: #ffd0598b;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .announcments_heading{
+            position: absolute;
+            top: 80px;
+            text-align: center;
+            font-family: "Inter";
+            font-size: 10px;
+            font-weight: 200;
+            font-style: medium;
+            align-items: center;
+        }
+
+    
+        .announcement-card h1 {
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .announcement-card p {
+            font-size: 10px;
+            color: #999;
+            margin-bottom: 0;
+        }
+
+        .appointment-box {
+            position: relative;
+            left: 30px;
+            background-color: #f8b9e684;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            width: 30%;
+            box-sizing: border-box;
+            display: inline-block;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .appointment-box h1{
+            font-family: "TS Safaa";
+            font-size: 15px;
+            font-weight: 500;
+            font-style: medium;
+        }
+
+        .appointment-box p{
+            font-family: "TS Safaa";
+            font-size: 10px;
+            font-weight: 500;
+            font-style: normal;
+            color: #999;
+        }
+
+        /* Style for Tutors Cards */
+        .tutors-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tutors-card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 300px;
+            margin: 10px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .tutors-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .tutors-card h4 {
+            color: #4CAF50;
+        }
+
+        .tutors-card p {
+            text-align: justify;
+            margin: 10px;
+            color: gray;
+        }
+
+        .card {
+            width: 250px;
+            
+            display: flex;
+            height: 370px;
+            margin: 20px;
+            box-shadow: 0 4px 8px 0 #fff48e;
+            transition: 0.3s;
+            position: relative;
+            margin-top: 10px;
+            border-radius: 30px;
+            justify-content: center;
+     
+            
+        }
+        {{!-- .view_backgound{
+            position: absolute;
+            width: 1280px;
+            height: 450px;
+            top: 80px;
+            background-color: #ffd0595a;
+            opacity: 0.5;
+        } --}}
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgb(143, 143, 137);
+        }
+        .card img {
+            width: 100%;
+            height: 50%;
+            border-radius: 30px;
+            
+        }
+
+        .card h{
+            color: #000000;
+            margin: 5px;
+            font-family: 'TS Safaa';
+            font-weight: bold;
+            text-align: center;
+            position: absolute;
+            left: 34%;
+            top: 60%;
+
+        }
+
+        .card p {
+            font-family: "TS Safaa";
+            font-size: 13px;
+            font-style: normal;
+            text-align: center;
+            
+            
+            
+        }
+        .remove_ad_button{
+            position: absolute;
+            left: 65px;
+            top: 315px;
+            width: 120px;
+            height: 40px;
+            background: #f8ee98;
+            border-radius: 100px;
+            transition: all 0.2s ease-in-out;
+            font-family: 'TS Safaa';
+            font-size: 15px;
+            font-style: normal;
+            text-align: center;
+            border: none;
+            color: rgb(152, 148, 136);
+            text-decoration: none;
+            padding: 5px;
+            margin-top: 10px;
+            margin-bottom:2px
+        }
+
+        .remove_ad_button:hover{
+            background: rgb(152,148,136);
+            color: #f8ee98;
+
+
+        }
+        .remove_ad_text{
+            position: absolute; 
+            top: 60px
+        }
+        
+        .tutors-header {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .tutors-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tutors-card {
+            width: calc(33.33% - 40px);
+            margin: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .tutors-card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .tutors-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .tutors-card p {
+            margin: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .logo{
+            position: absolute;
+            width: 175px;
+            height: 45px;
+            left: 7px;
+            top: 35px;
+
+            }
+        .homepage h1{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            left: 600px;
+            top: 200px;
+            text-decoration: none;
+            font-size: 30px;
+            font-family: 'Inter';
+            font-style: bold;
+        }
+        .homepage p{
+            position: absolute;
+            width: 400px;
+            height: 150px;
+            left: 600px;
+            top: 300px;
+            text-decoration: none;
+            font-size: 15px;
+            font-family: 'TS Safaa';
+            font-style: normal;
+        }
+        .hp_error {
+            border: 2px solid #FFD059;
+            border-radius: 10px;
+            padding: 10px; 
+            background: #FFF1CD;
+            position: absolute;
+            top : 200px;
+            width: 500px;
+            height: 100px;
+            text-align: center;
+        }
+
+        .hp_error h1{
+            text-decoration: none;
+            font-size: 15px;
+            font-family: 'TS Safaa';
+            font-style: normal;
+        }
+
+        .hp_error p{
+            text-decoration: none;
+            font-size: 15px;
+            font-family: 'TS Safaa';
+            font-style: normal;
+        }
+        }
+
+
+              @media (min-width: 1331px) and (max-width: 3000px) {
+                                  body {
+
+    overflow-x: hidden;
+  }
+        /* Style for Navbar */
+          .top_border{
+            position: absolute;
+            width: 1280px;
+            height: 35px;
+            left: 0px;
+            top: -3px;
+            background: #FFD059;
+        }
+        .navbar {
+            margin-left: -70px;
+            position: absolute;
+            width: 1280px;
+            height: 35px;
+            left: 350px;
+            top: 30px;
+        }
+
+        .navbar a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 15px;
+            font-family: 'TS Safaa';
+            font-style: normal;
+        }
+
+        .navbar a:hover {
+            background-color: #FFD059;
+            color: black;
+        }
+
+        .navbar a.active {
+            background-color: #FFD059;
+            color: rgb(0, 0, 0);
+            font-style: bold;
+        }
+
+        /* Style for Announcement Cards */
+     .announcement-card {
+  position: relative;
+  top: 50px;
+  width: 1000px;
+  height: 100px;
+  margin: 15px;
+  font-family: "TS Safaa";
+  font-style: normal;
+  background-color: #ffd0598b;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 16px; /* Add this line to set a base font size */
+}
+
+.announcments_heading {
+  position: absolute;
+  top: 80px;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 14px; /* Increase font size from 10px */
+  font-weight: 200;
+  font-style: medium;
+  align-items: center;
+}
+
+.announcement-card h1 {
+  font-size: 20px; /* Increase font size from 15px */
+  font-style: normal;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.announcement-card p {
+  font-size: 14px; /* Increase font size from 10px */
+  color: #999;
+  margin-bottom: 0;
+}
+
+    .appointment-box {
+    position: relative;
+    left: 30px;
+    background-color: #f8b9e684;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px;
+    width: 40%;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 20px;
+    text-align: center;
+}
+.appointment-box h1{
+    font-family: "TS Safaa";
+    font-size: 18px;
+    font-weight: 500;
+    font-style: medium;
+}
+
+.appointment-box p{
+    font-family: "TS Safaa";
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    color: #999;
+}
+
+      /* Style for Tutors Cards */
+        .tutors-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tutors-card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 300px;
+            margin: 10px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .tutors-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .tutors-card h4 {
+            color: #4CAF50;
+        }
+
+        .tutors-card p {
+            text-align: justify;
+            margin: 10px;
+            color: gray;
+        }
+
+        .card {
+            width: 250px;
+            
+            display: flex;
+            height: 370px;
+            margin: 20px;
+            box-shadow: 0 4px 8px 0 #fff48e;
+            transition: 0.3s;
+            position: relative;
+            margin-top: 10px;
+            border-radius: 30px;
+            justify-content: center;
+     
+            
+        }
+        {{!-- .view_backgound{
+            position: absolute;
+            width: 1280px;
+            height: 450px;
+            top: 80px;
+            background-color: #ffd0595a;
+            opacity: 0.5;
+        } --}}
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgb(143, 143, 137);
+        }
+        .card img {
+            width: 100%;
+            height: 50%;
+            border-radius: 30px;
+            
+        }
+
+        .card h{
+            color: #000000;
+            margin: 5px;
+            font-family: 'TS Safaa';
+            font-weight: bold;
+            text-align: center;
+            position: absolute;
+            left: 34%;
+            top: 60%;
+
+        }
+
+        .card p {
+            font-family: "TS Safaa";
+            font-size: 13px;
+            font-style: normal;
+            text-align: center;
+            
+            
+            
+        }
+        .remove_ad_button{
+            position: absolute;
+            left: 65px;
+            top: 315px;
+            width: 120px;
+            height: 40px;
+            background: #f8ee98;
+            border-radius: 100px;
+            transition: all 0.2s ease-in-out;
+            font-family: 'TS Safaa';
+            font-size: 15px;
+            font-style: normal;
+            text-align: center;
+            border: none;
+            color: rgb(152, 148, 136);
+            text-decoration: none;
+            padding: 5px;
+            margin-top: 10px;
+            margin-bottom:2px
+        }
+
+        .remove_ad_button:hover{
+            background: rgb(152,148,136);
+            color: #f8ee98;
+
+
+        }
+        .remove_ad_text{
+            position: absolute; 
+            top: 60px
+        }
+        
+        .tutors-header {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .tutors-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tutors-card {
+            width: calc(33.33% - 40px);
+            margin: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .tutors-card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .tutors-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .tutors-card p {
+            margin: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .logo{
+            position: absolute;
+            width: 175px;
+            height: 45px;
+            left: 7px;
+            top: 35px;
+
+            }
+        .homepage h1{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            left: 600px;
+            top: 200px;
+            text-decoration: none;
+            font-size: 30px;
+            font-family: 'Inter';
+            font-style: bold;
+        }
+        .homepage p{
+            position: absolute;
+            width: 400px;
+            height: 150px;
+            left: 600px;
+            top: 300px;
+            text-decoration: none;
+            font-size: 15px;
+            font-family: 'TS Safaa';
+            font-style: normal;
+        }
+        .hp_error {
+            border: 2px solid #FFD059;
+            border-radius: 10px;
+            padding: 10px; 
+            background: #FFF1CD;
+            position: absolute;
+            top : 200px;
+            width: 500px;
+            height: 100px;
+            text-align: center;
+        }
+
+        .hp_error h1{
+            text-decoration: none;
+            font-size: 15px;
+            font-family: 'TS Safaa';
+            font-style: normal;
+        }
+
+        .hp_error p{
+            text-decoration: none;
+            font-size: 15px;
+            font-family: 'TS Safaa';
+            font-style: normal;
+        }
+
+   
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top_border">
+
+        <img src="/logo.png" alt="Image description" class="logo">
+    </div>
+
+            
+    <div class="navbar">
+        
+        <a href="#" id="home-link" >Home</a>
+        <a href="#" id="post-ads-link">Post an Ad</a>
+        <a href="#" id="view-ads-link">View My Ads</a>
+        <a href="#" id="appointments-link">My Appointments</a>
+        <a href="#" id="requests-link">Requests</a>
+        <a href="#" id="announcements-link">View Announcements</a>
+        <a href="#" id="reviews-link">View my reviews</a>
+        <a href="#" id="announcements-link">Resources</a>
+        {{!-- <a href="#" id="settings-link">Settings</a> --}}
+        <a href="/frontend/pages/settings.hbs" id="sett">Settings</a>
+    </div>
+
+    <!-- Content -->
+    <div class="search-container" style="text-align: center;margin: top 5px;">
+        <input type="text" id="search-input" placeholder="Search...">
+        <button id="search-button">Search</button>
+    </div>
+
+    <div id="ad-form-container"></div>
+    <div id="requests-container"></div>
+    <div class="container">
+        <h1 class="tutors-header"></h1>
+        <div class="tutors-container" id="tutors-data">
+            <!-- tutors data will be displayed here -->
+        </div>
+
+        <div class="container">
+            <h1 style="text-align: center;"></h1>
+            <div class="tutors-row" id="tutors-data"></div>
+        </div>
+
+        <div class="container">
+            <h1 style="text-align: center;"></h1>
+            <div class="tutors-row" id="announcement-data"></div>
+        </div>
+
+        <div class="appointments-container"></div>  
+        <div class="deletereviews"> </div>
+      
+
+</body>
+
+<script>
+    const navbarLinks = document.querySelectorAll(".navbar a");
+
+    window.onload = function () {
+        displayHomePage();
+    }
+
+    navbarLinks.forEach(link => {
+        link.addEventListener("click", event => {
+            event.preventDefault();
+
+            const page = event.target.textContent;
+
+            if (page === "Home") {
+                displayHomePage();
+            } 
+            if (page === "View Announcements") {
+                displayAnnouncementsPage();
+            }
+            if (page ==="Post an Ad") {
+                showAdForm();
+            }
+            if (page==="View My Ads") {
+                displayAds();
+            }
+            if (page==="Requests") {
+                displayRequestsPage();
+            }
+            if (page==="My Appointments")
+            {
+                displayAppointmentsPage();
+            }
+            if (page==="View my reviews"){
+                displayDeleteReview();
+            }
+            if (page === "Settings") {
+                displaySettingsPage();
+            } 
+            if (page === "Resources") {
+                displayResourcesPage();
+            }
+            // Push state to browser history
+            window.history.pushState({}, page, `/${page.toLowerCase()}`);
+        });
+    });
+
+    window.addEventListener('popstate', () => {
+        if (window.history.state) {
+            displayHomePage();
+        }
+        else {
+            displayHomePage();
+        }
+    });
+
+   async function displayHomePage() {
+      const appointmentsContainer = document.querySelector(".appointments-container");
+       appointmentsContainer.innerHTML = "";
+     document.querySelector('.deletereviews').innerHTML = "";
+     document.getElementById("requests-container").innerHTML = "";
+        // To hide the div with class "search-container"
+        document.getElementById("ad-form-container").innerHTML = "";
+        document.querySelector('.search-container').style.display = 'none';
+
+        document.getElementById("announcement-data").innerHTML = "";
+
+        try {
+            const email = window.localStorage.getItem("username");
+            const response = await fetch(`/username/${email}`);
+            const data = await response.json();
+            const { name } = data;
+            document.getElementById("tutors-data").innerHTML = `
+      <div class="homepage">
+        <img src="/tutorpic.png" style="position: absolute; float: left; left: 9%; max-width: 28%; top:30%;">
+        <h1 style="text-align: center; font-family:'TS Safaa'; font-weight:550; font-size:180%;">Welcome, ${name}!</h1>
+        <br> 
+       <p >Youre just a few steps away from finding students 
+for yourself. Decide what you want to teach and post an advertisement for it to get started!</p>
+
+        <div class="tutors-row" id="tutors-data"></div>
+      </div>
+    `;
+        } catch (error) {
+            console.error(error);
+            // Display error message
+            document.getElementById("tutors-data").innerHTML = `
+      <div class="hp_error">
+        <h1 style="text-align: center;">Error</h1>
+        <p>Failed to retrieve username.</p>
+        <div class="tutors-row" id="tutors-data"></div>
+      </div>
+    `;
+        }
+    }
+
+
+
+
+    ///////////////////
+  const displayAds = async () => {
+      const appointmentsContainer = document.querySelector(".appointments-container");
+      appointmentsContainer.innerHTML = "";
+     document.querySelector('.deletereviews').innerHTML = "";
+     document.getElementById("requests-container").innerHTML = "";
+      document.getElementById("tutors-data").innerHTML = "";
+      document.getElementById("announcement-data").innerHTML = "";
+      document.querySelector('.search-container').style.display = 'none';
+      // Clear the ad form container
+      document.getElementById("ad-form-container").innerHTML = "";
+         document.getElementById("announcement-data").innerHTML = "";
+        const email = window.localStorage.getItem("username");
+        try {
+            const response = await fetch(`/username/${email}`);
+            const data = await response.json();
+            const username = data.name;
+            const adsResponse = await fetch(`/adss/${username}`);
+            const adsData = await adsResponse.json();
+            const ads = adsData.ads;
+            let adsHTML = '';
+            if (ads.length > 0) {
+                adsHTML = ads.map(ad => `
+        {{!-- <div class="view_background">
+        </div>   --}}
+        <div class="card">
+          <img src="${ad.image}" alt="${ad.subject}">
+          <div style="position:absolute;left: 25px;display: flex; flex-direction: column; justify-content: center; gap: -100px; margin-top: 180px;">
+            <p><b>Grade:</b> ${ad.class}</p>
+            <p><b>Subject:</b> ${ad.subject}</p>
+            <p><b>Price:</b> ${ad.price}</p>
+            </div>
+            <form onsubmit="try { removeAd('${ad._id}'); } catch(err) { console.error(err); } return false;">
+                        <button type="submit" class="remove_ad_button"style:"position:fixed;">Remove Ad</button>
+                    </form>
+          
+        </div>
+      
+      `).join('');
+            } else {
+                adsHTML = '<p>No ads found for this username</p>';
+            }
+            document.getElementById("tutors-data").innerHTML = `
+      
+      <div class="remove_ad_text">
+        <h1 style="text-align: center; font-family: 'TS Safaa', cursive; ">${username}, your Ads</h1>
+        <div class="tutors-row" id="ads-data">${adsHTML}</div>
+      </div>
+    `;
+        } catch (error) {
+            console.error(error);
+            alert('Error fetching ads data');
+        }
+    };
+
+    function removeAd(adId) {
+        confirmation = confirm("Are you sure you want to delete this ad?");
+        if (confirmation == false) {
+            return;
+        }
+        fetch('/deleteads', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ _id: adId })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                displayAds();
+                alert('Ad deleted successfully');
+                console.log('Ad deleted successfully');
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    }
+    // Call the displayAds function to initially display all ads
+
+
+    // Add event listener to search button
+    document.getElementById("search-button").addEventListener("click", () => {
+        // To show the div with class "search-container"
+
+
+        const searchQuery = document.getElementById("search-input").value.toLowerCase();
+        fetch(`/search?q=${searchQuery}`)
+            .then(response => response.json())
+            .then(data => {
+                let html = "";
+                data.forEach((ad, index) => {
+                    html += `
+            <div class="tutors-card">
+              <img src="${ad.image}" alt="${ad.subject} - ${ad.class}">
+              <h4 style="text-align: center;">${ad.time}</h4>
+              <p>${ad.subject} - ${ad.class}</p>
+              <p>${ad.price}</p>
+            </div>
+          `;
+                    if (index % 3 === 2 || index === data.length - 1) {
+                        html += '</div>';
+                    }
+                });
+                document.getElementById("tutors-data").innerHTML = html;
+                // Add the current search query to the browser history
+                history.pushState({ searchQuery }, null, `/search?q=${searchQuery}`);
+            })
+            .catch(err => console.error(err));
+    });
+
+    // Add event listener to popstate event (back/forward buttons)
+
+ function showAdForm() {
+     document.querySelector('.deletereviews').innerHTML = "";
+            document.getElementById("requests-container").innerHTML = "";
+     document.getElementById("tutors-data").innerHTML = "";
+     document.getElementById("announcement-data").innerHTML = "";
+     document.querySelector(".search-container").style.display = "none";
+     document.getElementById("ad-form-container").innerHTML = "";
+     const appointmentsContainer = document.querySelector(".appointments-container");
+     appointmentsContainer.innerHTML = "";
+
+        
+        // Create the form elements
+
+        const form = document.createElement("form");
+        const formLabel = document.createElement("label");
+        form.id = "ad-form";
+        formLabel.textContent = "Post Ad";
+        form.style.marginTop = "20px";
+        form.style.textAlign = "center";
+        form.style.position = "absolute";
+        form.style.top = "150px";
+        form.style.left = "200px";
+        formLabel.style.fontFamily = "TS Safaa";
+        formLabel.style.fontSize = "20px";
+        formLabel.style.fontStyle = "bold";
+        formLabel.style.position = "absolute"
+        formLabel.style.left = "380px"
+        formLabel.style.top = "-50px"
+        formLabel.style.width = "100px"
+
+        const nameDiv = document.createElement("div");
+        const nameLabel = document.createElement("label");
+        nameLabel.textContent = "Name ";
+        const nameInput = document.createElement("input");
+        nameInput.type = "text";
+        nameInput.name = "name";
+        nameDiv.appendChild(nameLabel);
+        nameDiv.appendChild(nameInput);
+        nameInput.style.height = "30px";
+        nameInput.style.width = "350px";
+        nameInput.style.borderRadius ="5px";
+        nameInput.style.borderStyle = "solid";
+        nameInput.style.borderColor = "grey";
+        nameInput.style.fontFamily = "TS Safaa";
+        nameInput.style.fontSize = "15px";
+        nameInput.style.fontStyle = "normal";
+        nameInput.style.marginBottom = "10px";
+        nameLabel.style.fontFamily = "TS Safaa";
+        nameLabel.style.fontSize = "15px";
+        nameLabel.style.fontStyle = "normal";
+        nameLabel.style.position = "relative";
+        nameLabel.style.right = "150px";
+        nameLabel.style.top = "0px";
+        nameLabel,nameInput.style.display = "block";
+
+    
+
+        const subjectsDiv = document.createElement("div");
+        const subjectsLabel = document.createElement("label");
+        subjectsLabel.textContent = "Subjects";
+        const subjectsInput = document.createElement("input");
+        subjectsInput.type = "text";
+        subjectsInput.name = "subject";
+        subjectsDiv.appendChild(subjectsLabel);
+        subjectsDiv.appendChild(subjectsInput);
+        subjectsInput.style.height = "30px";
+        subjectsInput.style.width = "350px";
+        subjectsInput.style.borderRadius ="5px";
+        subjectsInput.style.borderStyle = "solid";
+        subjectsInput.style.borderColor = "grey";
+        subjectsInput.style.fontFamily = "TS Safaa";
+        subjectsInput.style.fontSize = "15px";
+        subjectsInput.style.fontStyle = "normal";
+        subjectsInput.style.marginBottom = "10px";
+        subjectsLabel.style.fontFamily = "TS Safaa";
+        subjectsLabel.style.fontSize = "15px";
+        subjectsLabel.style.fontStyle = "normal";
+        subjectsLabel.style.position = "relative";
+        subjectsLabel.style.right = "140px";
+        subjectsLabel.style.top = "0px";
+        subjectsLabel,subjectsInput.style.display = "block";
+
+        const gradeDiv = document.createElement("div");
+        const gradeLabel = document.createElement("label");
+        gradeLabel.textContent = "Select Grade ";
+        const gradeSelect = document.createElement("select");
+        const options = ["grade 6-8", "grade 6", "grade 7", "grade 8", "olevels", "alevels", "fsc", "matric", "olevels 1", "olevels 2", "fsc 1", "fsc 2", "matric 1", "matric 2", "bachelors", "masters", "gre", "sat","all grades","others"];
+
+        options.forEach(function (option) {
+            const gradeOption = document.createElement("option");
+            gradeOption.value = option;
+            gradeOption.textContent = option;
+            gradeSelect.appendChild(gradeOption);
+        });
+
+        gradeSelect.name = "classs";
+        gradeDiv.appendChild(gradeLabel);
+        gradeDiv.appendChild(gradeSelect);
+        gradeDiv.style.position = "absolute";
+        gradeDiv.style.left = "500px";
+        gradeDiv.style.top = "0px";
+        gradeSelect.style.height = "30px";
+        gradeSelect.style.width = "350px";
+        gradeSelect.style.borderRadius ="5px";
+        gradeSelect.style.borderStyle = "solid";
+        gradeSelect.style.borderColor = "grey";
+        gradeSelect.style.fontFamily = "TS Safaa";
+        gradeSelect.style.fontSize = "15px";
+        gradeSelect.style.fontStyle = "normal";
+        gradeSelect.style.marginBottom = "10px";
+        gradeLabel.style.fontFamily = "TS Safaa";
+        gradeLabel.style.fontSize = "15px";
+        gradeLabel.style.fontStyle = "normal";
+        gradeLabel.style.position = "relative";
+        gradeLabel.style.right = "118px";
+        gradeLabel.style.top = "0px";
+        gradeLabel,gradeSelect.style.display = "block";
+
+
+        const costDiv = document.createElement("div");
+        const costLabel = document.createElement("label");
+        costLabel.textContent = "Select Cost ";
+        const costSelect = document.createElement("select");
+        costSelect.name = "pricee";
+        const optionss = [
+        "5000 pkr per month",
+        "10000 pkr per month",
+        "15000 pkr per month",
+        "20000 pkr per month",
+        "25000 pkr per month",
+        "30000 pkr per month",
+        "35000 pkr per month",
+        "40000 pkr per month",
+        "50000 pkr per month",
+        "Above 50000 pkr",
+        ];
+        optionss.forEach((option) => {
+        const optionElem = document.createElement("option");
+        optionElem.textContent = option;
+        costSelect.appendChild(optionElem);
+        });
+        costDiv.appendChild(costLabel);
+        costDiv.appendChild(costSelect);
+        costDiv.style.position = "absolute";
+        costDiv.style.left = "500px";
+        costDiv.style.top = "70px";
+        costSelect.style.height = "30px";
+        costSelect.style.width = "350px";
+        costSelect.style.borderRadius ="5px";
+        costSelect.style.borderStyle = "solid";
+        costSelect.style.borderColor = "grey";
+        costSelect.style.fontFamily = "TS Safaa";
+        costSelect.style.fontSize = "15px";
+        costSelect.style.fontStyle = "normal";
+        costSelect.style.marginBottom = "10px";
+        costLabel.style.fontFamily = "TS Safaa";
+        costLabel.style.fontSize = "15px";
+        costLabel.style.fontStyle = "normal";
+        costLabel.style.position = "relative";
+        costLabel.style.right = "125px";
+        costLabel.style.top = "0px";
+        costLabel,costSelect.style.display = "block";
+
+        const imageDiv = document.createElement("div");
+        const imageLabel = document.createElement("label");
+        imageLabel.textContent = "Image Link";
+        const imageInput = document.createElement("input");
+        imageInput.type = "text";
+        imageInput.name = "image";
+        imageDiv.appendChild(imageLabel);
+        imageDiv.appendChild(imageInput);
+        imageInput.style.height = "30px";
+        imageInput.style.width = "350px";
+        imageInput.style.borderRadius ="5px";
+        imageInput.style.borderStyle = "solid";
+        imageInput.style.borderColor = "grey";
+        imageInput.style.fontFamily = "TS Safaa";
+        imageInput.style.fontSize = "15px";
+        imageInput.style.fontStyle = "normal";
+        imageInput.style.marginBottom = "10px";
+        imageLabel.style.fontFamily = "TS Safaa";
+        imageLabel.style.fontSize = "15px";
+        imageLabel.style.fontStyle = "normal";
+        imageLabel.style.position = "relative";
+        imageLabel.style.right = "130px";
+        imageLabel.style.top = "0px";
+        imageLabel,imageInput.style.display = "block";
+
+
+        const submitButton = document.createElement("button");
+        submitButton.type = "submit";
+        submitButton.textContent = "Submit";
+        submitButton.style.position = "absolute";
+        submitButton.style.left = "300px";
+        submitButton.style.top = "230px";
+        submitButton.style.width = "300px";
+        submitButton.style.height = "47px";
+        submitButton.style.background = "#FFD059";
+        submitButton.style.borderRadius = "100px";
+        submitButton.style.fontFamily = "TS Safaa";
+        submitButton.style.fontSize = "15px";
+        submitButton.style.fontWeight = "500";
+        submitButton.style.fontStyle = "normal";
+        submitButton.style.textAlign = "center";
+        submitButton.style.border = "none";
+        submitButton.style.color = "black";
+        submitButton.style.textDecoration = "none";
+
+        submitButton.addEventListener("mouseover", function() {
+            submitButton.style.background = "#FFA7E6";
+        });
+        submitButton.addEventListener("mouseout", function() {
+            submitButton.style.background = "#FFD059";
+        });
+
+        // Add a submit event listener to the form
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Check if the entered username exists
+            const username = nameInput.value;
+            const tutorResponse = await fetch(`/tutor/${username}`);
+            if (tutorResponse.status === 404) {
+                alert("Username not found. Ad cannot be posted.");
+                return;
+            }
+    const gradeSelect = document.querySelector("select[name='classs']");
+    const pricc = document.querySelector("select[name='pricee']")
+            // Send a POST request to the server to post the ad
+            const adResponse = await fetch("/postad", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    subject: subjectsInput.value,
+                    class: gradeSelect.options[gradeSelect.selectedIndex].value,
+                    time: nameInput.value,
+                    price: pricc.options[pricc.selectedIndex].value,
+                    image: imageInput.value,
+                }),
+            });
+
+            // Get the response data and display it to the user
+            const responseData = await adResponse.json();
+            alert(responseData);
+        });
+
+        form.appendChild(formLabel);
+        form.appendChild(nameDiv);
+        form.appendChild(subjectsDiv);
+        form.appendChild(gradeDiv);
+        form.appendChild(costDiv);
+        form.appendChild(imageDiv);
+        form.appendChild(submitButton);
+        
+
+     document.getElementById("ad-form-container").appendChild(form);
+
+     // Add a submit event listener to the form
+     form.addEventListener("submit", async (event) => {
+         event.preventDefault(); // Prevent the default form submission behavior
+
+         // Check if the entered username exists
+         const username = nameInput.value;
+         const tutorResponse = await fetch(`/tutor/${username}`);
+         if (tutorResponse.status === 404) {
+            alert("Username not found. Ad cannot be posted.");
+             return;
+         }
+     });
+ }
+
+ // Add a submit event listener to the form
+    const onSubmit = async (event) => {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Check if the entered username exists
+        const username = nameInput.value;
+        const tutorResponse = await fetch(`/tutor/${username}`);
+        if (tutorResponse.status === 404) {
+            alert("Username not found. Ad cannot be posted.");
+            form.removeEventListener("submit", onSubmit); // Remove the event listener
+            return;
+        }
+
+
+        // Send a POST request to the server to post the ad
+        const adResponse = await fetch("/postad", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                subject: subjectsInput.value,
+                class: gradeInput.value,
+                time: nameInput.value,
+                price: costInput.value,
+                image: imageInput.value,
+            }),
+        });
+
+        // Get the response data and display it to the user
+        const responseData = await adResponse.json();
+        alert(responseData);
+    };
+
+    form.addEventListener("submit", onSubmit);
+
+
+    function displayReviewsPage() {
+        // Add code to display reviews page here
+    }
+    async function displayRequestsPage() {
+        
+         document.querySelector('.deletereviews').innerHTML = "";
+        document.getElementById("requests-container").innerHTML = "";
+           document.getElementById("tutors-data").innerHTML = "";
+        document.getElementById("announcement-data").innerHTML = "";
+        document.querySelector(".search-container").style.display = "none";
+        document.getElementById("ad-form-container").innerHTML = "";
+        const appointmentsContainer = document.querySelector(".appointments-container");
+        appointmentsContainer.innerHTML = "";
+
+        const email = localStorage.getItem("username");
+        const response = await fetch(`/apptviaemail/${email}`);
+        const data = await response.json();
+
+        if (response.status === 200) {
+            const requestsContainer = document.getElementById("requests-container");
+            requestsContainer.style.display = "flex";
+            requestsContainer.style.flexWrap = "wrap";
+            requestsContainer.style.gap = "10px";
+
+            for (let i = 0; i < data.length; i++) {
+                const requestBox = document.createElement("div");
+                requestBox.style.position = "relative";
+                requestBox.style.left = "30px";
+                requestBox.style.top = "100px";
+                requestBox.style.backgroundColor = "#ffd0598b";
+                requestBox.style.border = "2px solid #FFD059";
+                requestBox.style.padding = "10px";
+                requestBox.style.margin = "10px";
+                requestBox.style.borderRadius = "20px";
+                requestBox.style.width = "30%";
+                requestBox.style.textAlign = "center";
+                requestBox.style.display = "inline-block";
+                requestBox.style.boxSizing = "border-box";
+                requestBox.style.fontFamily = "TS Safaa";
+                
+
+
+
+                const idRequest = document.createElement("p");
+                idRequest.textContent= `Request ID : ${data[i]._id}`;
+                idRequest.style.lineHeight = "1.2";
+                const name= document.createElement("p");
+                name.textContent= `Email of student : ${data[i].username}`;
+                name.style.lineHeight = "1.2";
+                const coursesLabel = document.createElement("p");
+                coursesLabel.textContent = `Courses requested: ${data[i].courses}`;
+                coursesLabel.style.lineHeight = "1.2";
+                const daysLabel = document.createElement("p");
+                daysLabel.textContent = `Days per week: ${data[i].days}`;
+                daysLabel.style.lineHeight = "1.2";
+                const hoursLabel = document.createElement("p");
+                hoursLabel.textContent = `Hours per day: ${data[i].hours}`;
+                hoursLabel.style.lineHeight = "1.2";
+                const bidLabel = document.createElement("p");
+                bidLabel.textContent = `Bid: ${data[i].bid}`;
+                bidLabel.style.lineHeight = "1.2";
+                const acceptBtn = document.createElement('button');
+                acceptBtn.style.width = '100px';
+                acceptBtn.style.height = '50px';
+                acceptBtn.style.width = '100px';
+                acceptBtn.style.height = '50px';
+                acceptBtn.style.borderRadius = "30px";
+                acceptBtn.style.border= "none";
+                acceptBtn.style.background = "#FFD059";
+                acceptBtn.style.fontFamily = "TS Safaa";
+                acceptBtn.style.fontWeight = "500";
+                acceptBtn.style.textAlign = "center";
+                acceptBtn.addEventListener("mouseover", function() {
+                    acceptBtn.style.background = "green";
+                    });
+
+                    // Remove the hover effect
+                acceptBtn.addEventListener("mouseout", function() {
+                    acceptBtn.style.background = "#FFD059";
+                    });
+
+                {{!-- acceptBtn.style.marginRight = "30px"; --}}
+                const acceptText = document.createTextNode('Accept');
+                acceptBtn.appendChild(acceptText);
+                 acceptBtn.onclick = async () => {
+                    try {
+                        const tutorEmail = localStorage.getItem("username");
+                        const requestBody = {
+                            requestId: data[i]._id,
+                            courses: data[i].courses,
+                            days: data[i].days,
+                            hours: data[i].hours,
+                            bid: data[i].bid,
+                            studentEmail: data[i].username,
+                            desc: data[i].desc,
+                        };
+                         const requestBody2 = {
+                            requestId: data[i]._id,
+                            courses: data[i].courses,
+                            days: data[i].days,
+                            hours: data[i].hours,
+                            bid: data[i].bid,
+                            studentEmail: tutorEmail,
+                            desc: data[i].desc,
+                        };
+                        const tutorResponse = await fetch(`/confirmedappts/${tutorEmail}/ads`, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(requestBody),
+                        });
+                        const tutorData = await tutorResponse.json();
+                        if (tutorResponse.status === 404) {
+                            throw new Error("Tutor not found");
+                        }
+
+                        const studentResponse = await fetch(
+                            `/confirmedapptsStudent/${data[i].username}/ads`,
+                            {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify(requestBody2),
+                            }
+                        );
+                        const studentData = await studentResponse.json();
+                        if (studentResponse.status === 404) {
+                            throw new Error("Student not found");
+                        }
+
+                        const deleteResponse = await fetch(
+                            `/requestsappt/${tutorEmail}/${data[i]._id}`,
+                            {
+                                method: "DELETE",
+                            }
+                        );
+                        if (deleteResponse.status === 404) {
+                            throw new Error("Appointment not found");
+                        }
+
+                        // Remove request box from the UI
+                        alert("Appointment approved successfully!");
+                        requestsContainer.removeChild(requestBox);
+                    } catch (err) {
+                        console.error(err);
+                        alert("Something went wrong, please try again later.");
+                    }
+                };
+              
+                /// decline function functionality
+                const declineBtn = document.createElement('button');
+
+                declineBtn.style.width = '100px';
+                declineBtn.style.height = '50px';
+                declineBtn.style.borderRadius = "30px";
+                declineBtn.style.border= "none";
+                declineBtn.style.background = "#FFD059";
+                declineBtn.style.fontFamily = "TS Safaa";
+                declineBtn.style.fontWeight = "500";
+                declineBtn.style.textAlign = "center";
+                declineBtn.style.marginLeft = "30px";
+
+                declineBtn.addEventListener("mouseover", function() {
+                    declineBtn.style.background = "red";
+                    });
+
+                    // Remove the hover effect
+                declineBtn.addEventListener("mouseout", function() {
+                    declineBtn.style.background = "#FFD059";
+                    });
+
+                const declineText = document.createTextNode('Decline');
+                declineBtn.onclick = function () {
+                    const email = localStorage.getItem('username');
+                    const id = data[i]._id;
+
+                    fetch(`/requestsappt/${email}/${id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Something went wrong!');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log(data);
+                            alert("Appointment declined successfully")
+                            displayRequestsPage();
+                            // handle success response from backend
+                        })
+                        .catch(error => {
+                            console.error(error);
+                            // handle error response from backend
+                        });
+                };
+                declineBtn.appendChild(declineText);
+                //////////// decline function ended
+
+                if (data[i].desc) {
+                    const descLabel = document.createElement("p");
+                    descLabel.textContent = `Description: ${data[i].desc}`;
+                    descLabel.style.lineHeight = "1.2";
+                    requestBox.append(idRequest,name,coursesLabel, daysLabel, hoursLabel, bidLabel, descLabel, acceptBtn, declineBtn);
+                } else {
+                    requestBox.append(idRequest,name,coursesLabel, daysLabel, hoursLabel, bidLabel, acceptBtn, declineBtn);
+                }
+                requestsContainer.appendChild(requestBox);
+            }
+           
+        
+
+        } else {
+            console.log("Error retrieving requests");
+        }
+    }
+
+ function displayAppointmentsPage() {
+     document.querySelector('.deletereviews').innerHTML = "";
+        document.getElementById("tutors-data").innerHTML = "";
+        document.getElementById("announcement-data").innerHTML = "";
+        document.querySelector(".search-container").style.display = "none";
+        document.getElementById("ad-form-container").innerHTML = "";
+        const appointmentsContainer = document.querySelector(".appointments-container");
+        appointmentsContainer.innerHTML = "";
+
+        // Clear previous results from requests container
+        document.getElementById("requests-container").innerHTML = "";
+
+        const email = localStorage.getItem("username");
+        if (!email) {
+            console.error("Email not found in local storage");
+            return;
+        }
+
+        fetch(`/returningConfirmedAppts/${email}`)
+            .then(res => res.json())
+            .then(data => {
+                const ads = data.ads;
+                const appointmentBoxes = ads.map(ad => {
+                    const checkboxId = `ad-${ad._id}-checkbox`;
+                    return `
+                    <div class="appointment-box">
+                        <h1>Appointment confirmed</h1>
+                        <p>Student email: ${ad.studentEmail}</p>
+                        <p>Courses: ${ad.courses}</p>
+                        <p>Days: ${ad.days}</p>
+                        <p>Hours: ${ad.hours}</p>
+                        <p>Bid: ${ad.bid}</p>
+                        <p>Description: ${ad.desc}</p>
+                        <input type="checkbox" id="${checkboxId}" name="${checkboxId}">
+                    </div>
+                `;
+                });
+
+                // Group appointments into rows with a maximum of three boxes per row
+              const rows = [];
+                for (let i = 0; i < appointmentBoxes.length; i += 2) {
+                    const row = appointmentBoxes.slice(i, i+=2).join("");
+                    rows.push(`<div class="row" style="width:100%;">${row}</div>`);
+                }
+
+
+                appointmentsContainer.innerHTML = rows.join("");
+            })
+            .catch(err => {
+                console.error(err);
+                alert("No appointments found!");
+            });
+    }
+
+
+    function displayResourcesPage() {
+        
+          document.getElementById("requests-container").innerHTML = "";
+        document.querySelector('.deletereviews').innerHTML = "";
+        document.getElementById("tutors-data").innerHTML = "";
+        document.getElementById("announcement-data").innerHTML = "";
+        document.querySelector(".search-container").style.display = "none";
+        document.getElementById("ad-form-container").innerHTML = "";
+        document.querySelector('.deletereviews').innerHTML = "";
+        const appointmentsContainer = document.querySelector(".appointments-container");
+        appointmentsContainer.innerHTML = "";
+        fetch("/viewrec")
+            .then((response) => response.json())
+            .then((data) => {
+                let html = ` 
+         
+            `;
+                for (let i = 0; i < data.announcements.length; i++) {
+                    html += `
+            <div class="announcments_heading">
+                <h1 style="text-align: center; font-family: TS Safaa; font-weight: 600; font-size: 25px;" >Resources</h1>
+                </div>
+          <div class="announcement-card">
+            <h1>${data.announcements[i].content}</h1>
+            <p>${data.announcements[i].createdAt}</p>
+            <br>
+          
+          </div>`;
+                }
+                document.getElementById("announcement-data").innerHTML = html;
+            })
+            .catch((err) => {
+                // Display an error message if the request fails
+                console.log("failure");
+            });
+    }
+
+    async function displayDeleteReview() {
+        document.getElementById("requests-container").innerHTML="";
+        document.querySelector(".appointments-container").innerHTML="";
+         document.getElementById("ad-form-container").innerHTML = "";
+        document.getElementById("announcement-data").innerHTML = "";
+        document.querySelector('.deletereviews').innerHTML = "";
+        document.querySelector('.search-container').style.display = 'none';
+        document.getElementById("tutors-data").innerHTML = "";
+        document.querySelector('.deletereviews').innerHTML = "";
+        const appointmentsContainer = document.querySelector(".appointments-container");
+        appointmentsContainer.innerHTML = '<h1 style="text-align: center; font-family: TS Safaa; font-weight: 600; font-size: 25px;">All Reviews</h1><br>';
+
+        const email = localStorage.getItem("username");
+        if (!email) {
+            console.error("Email of tutor not found in database, database error");
+            {{!-- error.style.fontFamily = "TS Safaa"; --}}
+            return;
+        }
+
+        const reviewsResponse = await fetch(`/returnRelevantReviews/${email}`);
+        const reviewsData = await reviewsResponse.json();
+
+        const reviewsContainer = document.querySelector(".deletereviews");
+        reviewsContainer.innerHTML = "";
+
+        reviewsData.forEach((review) => {
+            const reviewCard = document.createElement("div");
+            reviewCard.classList.add("review-card");
+            reviewCard.style.position = "relative";
+            reviewCard.style.top = "-20px";
+
+            const content = document.createElement("p");
+            content.innerText = review.content;
+            content.style.fontFamily = "TS Safaa";
+            content.style.fontStyle = "normal";
+            reviewCard.appendChild(content);
+
+            const tutorEmail = document.createElement("p");
+            tutorEmail.innerText = `Tutor email: ${review.tutorEmail}`;
+            tutorEmail.style.position = "relative";
+            tutorEmail.style.top = "15px";
+            reviewCard.appendChild(tutorEmail);
+
+            const studentEmail = document.createElement("p");
+            studentEmail.innerText = `Student email: ${review.studentEmail}`;
+            reviewCard.appendChild(studentEmail);
+            reviewsContainer.appendChild(reviewCard);
+        });
+
+        // Add styles to the reviews container
+        reviewsContainer.style.display = "flex";
+        reviewsContainer.style.flexWrap = "wrap";
+        reviewsContainer.style.justifyContent = "center";
+
+        // Add styles to the review cards
+        const reviewCards = document.querySelectorAll(".review-card");
+        reviewCards.forEach((card) => {
+            card.style.width = "1000px";
+            card.style.height = "100px";
+            card.style.backgroundColor = "#f8b9e684";
+            card.style.border = "1px solid #ccc";
+            card.style.borderRadius = "20px";
+            card.style.boxShadow = "2px 2px 10px #ccc";
+            card.style.margin = "10px";
+            card.style.padding = "10px";
+            card.style.textAlign = "center";
+            {{!-- card.style.display = "flex"; --}}
+            card.style.flexDirection = "column";
+            {{!-- card.style.justifyContent = "space-between"; --}}
+        });
+
+        // Add styles to the review content
+        const contents = document.querySelectorAll(".review-card p:first-child");
+        contents.forEach((content) => {
+            content.style.fontSize = "15px";
+            content.style.marginBottom = "10px";
+            content.style.overflow = "hidden";
+            content.style.textOverflow = "ellipsis";
+            content.style.whiteSpace = "nowrap";
+            content.style.fontFamily = "TS Safaa";
+            content.style.fontWeight = "500";
+        });
+
+        // Add styles to the review emails
+        const emails = document.querySelectorAll(".review-card p:not(:first-child)");
+        emails.forEach((email) => {
+            email.style.fontSize = "12px";
+            email.style.color = "#888";
+            email.style.marginTop = "10px";
+            email.style.fontFamily = "TS Safaa";
+        });
+    }
+
+    function displayAnnouncementsPage() {
+         document.querySelector('.deletereviews').innerHTML = "";
+          document.getElementById("requests-container").innerHTML = "";
+           document.getElementById("tutors-data").innerHTML = "";
+        document.getElementById("announcement-data").innerHTML = "";
+        document.querySelector(".search-container").style.display = "none";
+        document.getElementById("ad-form-container").innerHTML = "";
+        const appointmentsContainer = document.querySelector(".appointments-container");
+        appointmentsContainer.innerHTML = "";
+        fetch("/viewann")
+            .then((response) => response.json())
+            .then((data) => {
+                let html = ` 
+         
+            `;
+                for (let i = 0; i < data.announcements.length; i++) {
+                    html += `
+            <div class="announcments_heading">
+                <h1 style="font-family:'TS Safaa';">Announcements</h1>
+                </div>
+          <div class="announcement-card">
+            <h1>${data.announcements[i].content}</h1>
+            <p>${data.announcements[i].createdAt}</p>
+            <br>
+          
+          </div>`;
+                }
+                document.getElementById("announcement-data").innerHTML = html;
+            })
+            .catch((err) => {
+                // Display an error message if the request fails
+                console.log("failure");
+            });
+    }
+
+    function displaySettingsPage() {
+        window.location.href = "/settings";
+    }
+    // Define a global variable to store the name of the last executed function
+    let lastFunctionName = 'displayHomePage';
+
+    // Update the pushState function to store the name of the current function in the history state object
+    window.history.pushState({ functionName: lastFunctionName }, page, `/${page.toLowerCase()}`);
+
+    // Add code to the popstate event listener to execute the last executed function again
+    window.addEventListener('popstate', (event) => {
+        displayHomePage();
+    }
+    );
+
+
+function displaySettingsPage() {
+window.location.href = "/settings";
+}
+
+</script>
