@@ -15,8 +15,8 @@ a middle-person who mediates the bargaining between students and
 tutors. “Study Buddy” will optimize and streamline this entire process
 by eliminating the middle-man and allowing students to directly
 choose who they wish to be tutored by as well as allowing tutors to
-easily target their intended pool of students. It will serve as a timeefficient and organized solution to the conventional process of
-manually searching for tutors/students or having to involve a middleman in case of no access to social media forums. Following use cases are involved in this website:
+easily target their intended pool of students. It will serve as a time-efficient and organized solution to the conventional process of
+manually searching for tutors/students or having to involve a middle-man in case of no access to social media forums. Following use cases are involved in this website:
 Admin:
 1. Log in
 2. Update password
@@ -29,6 +29,7 @@ Admin:
 9. Add resources
 
 Tutor:
+
 10. Sign up
 11. Log in
 12. Update Password
@@ -45,6 +46,7 @@ Tutor:
 23. View announcements
 
 Student:
+
 24. Sign up
 25. Log in
 26. Update password
